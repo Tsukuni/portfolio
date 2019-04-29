@@ -1,9 +1,12 @@
-import "../static/scss/styles.scss"
+import "../static/scss/styles.scss";
+import BusinessCard from  "../components/BusinessCard";
 
 const Index = () => (
-  <div className="container">
-    <h1>Batman TV Shows</h1>
+  <div className="top">
+    <BusinessCard>
+      <h1>Sample</h1>
+    </BusinessCard>
   </div>
 )
 
-export default Index
+export default Index;
