@@ -1,6 +1,8 @@
 const BusinessCard = ({ children })=> (
-  <div className="businessCard">
-    { children }
+  <div className="wrapper">
+    <div className="businessCard">
+      { children }
+    </div>
   </div>
 )
 
