@@ -1,64 +1,61 @@
 import "../static/scss/styles.scss";
-import icon from "../static/images/icon.jpg";
-import icon2 from "../static/images/icon2.jpg"
 import BusinessCard from  "../components/BusinessCard";
-import SwitchIcon from "../components/SwitchIcon";
-import SnsIcon from "../components/SnsIcon";
-
 
 class Index extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isHover: false
+      isHover: false,
+      isRoll: false,
     }
   }
 
   handleHover() {
-    this.setState({ isHover: !this.state.isHover })
+    this.setState({ ...this.state, isHover: !this.state.isHover })
+  }
+
+  handleRoll() {
+    turnOver(this.state.isRoll);
+    this.setState({ ...this.state, isRoll: !this.state.isRoll });
   }
 
   render() {
+    const { isHover, isRoll } = this.state;
     return (
       <div className="top">
-        <BusinessCard>
-          <div className="businessCard__left">
-            <div className="businessCard__iconBox">
-              <SwitchIcon
-                mainIcon={icon}
-                subIcon={icon2}
-                isHover={this.state.isHover}
-                onHover={this.handleHover.bind(this)}
-              />
-              <SnsIcon />
-            </div>
-            <div className="businessCard__subinfo">
-              <div className="businessCard__mail">
-                <p className="small">tamkchi.fugu@gmail.com</p>
-              </div>
-              <div className="businessCard__company">
-                <p className="small">COUNTERWORKS Inc.</p>
-              </div>
-            </div>
-          </div>
-          <div className="businessCard__right">
-            <div className="businessCard__nameBox">
-              <p className="small">ENGINEER</p>
-              <h2>津國健太</h2>
-              <p className="small">Kenta Tsukuni</p>
-            </div>
-            <div className="businessCard__profileBox">
-              <p>
-                ハリネズミをめっちゃ飼ってるエンジニア。<br/>
-                よくわかりませんが会社ではハリネズミハンターと呼ばれています。<br/>
-                <br/>
-                一緒に魚釣り・スプラトゥーンできる人探してます。
-              </p>
-            </div>
-          </div>
-        </BusinessCard>
+        <BusinessCard
+          isHover={isHover}
+          onHover={this.handleHover.bind(this)}
+          onRoll={this.handleRoll.bind(this)}
+        />
       </div>
     )
+  }
+}
+
+const turnOver = isRoll => {
+  const front = document.getElementsByClassName("front")[0].style;
+  const back = document.getElementsByClassName("back")[0].style; 
+  if (isRoll) {
+    back.WebkitTransform = "perspective(1000) rotateY(90deg)";
+    back.MozTransform = "perspective(1000px) rotateY(90deg)";
+    back.Transform = "perspective(1000px) rotateY(90deg)";
+
+    setTimeout(() => {
+      front.WebkitTransform = "perspective(1000) rotateY(0deg)";
+      front.MozTransform = "perspective(1000px) rotateY(0deg)";
+      front.Transform = "perspective(1000px) rotateY(0deg)";
+    } , 500);
+  } else {
+    front.WebkitTransform = "perspective(1000) rotateY(-90deg)";
+    front.MozTransform = "perspective(1000px) rotateY(-90deg)";
+    front.Transform = "perspective(1000px) rotateY(-90deg)";
+
+    setTimeout(() => {
+      back.WebkitTransform = "perspective(1000) rotateY(0deg)";
+      back.MozTransform = "perspective(1000px) rotateY(0deg)";
+      back.Transform = "perspective(1000px) rotateY(0deg)";
+    } , 500);
   }
 }
 

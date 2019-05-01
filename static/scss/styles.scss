@@ -199,10 +199,49 @@ p {
     position: absolute;
     bottom: 30px;
   }
-  &__mail {
-
+  &__buttonBox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
   }
-  &__company{
-
+  &__button {
+    color:#1f622e;
+    padding: 12px 24px;
+    font-weight: 500;
+    border: solid 1px#1f622e;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      background-color:#1f622e;
+    }
   }
+}
+
+.front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform:perspective(2000) rotateY(0deg);
+  -moz-transform:perspective(2000px) rotateY(0deg);
+  transform:perspective(2000px) rotateY(0deg);
+  -webkit-transition:ease-out 0.5s -webkit-transform;
+  -moz-transition:ease-out 0.5s -moz-transform;
+  transition:ease-out 0.5s transform;
+}
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform:perspective(2000) rotateY(90deg);
+  -moz-transform:perspective(2000px) rotateY(90deg);
+  transform:perspective(2000px) rotateY(90deg);
+  -webkit-transition:ease-out 0.5s -webkit-transform;
+  -moz-transition:ease-out 0.5s -moz-transform;
+  transition:ease-out 0.5s transform;
 }
