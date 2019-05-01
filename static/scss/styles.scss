@@ -95,18 +95,107 @@ input, select {
     vertical-align:middle;
 }
 
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 20px;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.wrapper {
+  position: relative;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  &::before {
+    content:"";
+    display: block;
+    padding-top: 50%;
+  }
+}
+
 .top {
   width: 100vw;
   height: 100vh;
   position: relative;
-  background-color: black;
+  background-color: gray;
 }
 
 .businessCard {
-  width: 80%;
-  height: 600px;
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   background-color: white;
+  padding: 30px;
+  box-sizing: border-box;
+  &__left {
+    width: 25%;
+    height: 100%;
+    float: left;
+  }
+  &__right {
+    width: 75%;
+    height: 100%;
+    float: left;
+    padding-left: 15%;
+    box-sizing: border-box;
+  }
+  &__iconBox {
+    width: 100%;
+    float: left;
+  }
+  &__snsIconBox {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    svg {
+      font-size: 21px;
+    }
+  }
+  &__profileIcon {
+    width: 100%;
+    border-radius: 100%;
+  }
+  &__profileBox {
+    margin-top: 15%;
+  }
+  &__nameBox {
+  }
+  &__subinfo {
+    width: 25%;
+    position: absolute;
+    bottom: 30px;
+  }
+  &__mail {
+
+  }
+  &__company{
+
+  }
 }
