@@ -177,6 +177,13 @@ p {
     svg {
       font-size: 21px;
     }
+    a {
+      color: black;
+      text-decoration: none;
+      &:visited {
+        color:black;
+      }
+    }
   }
   &__profileIcon {
     width: 100%;

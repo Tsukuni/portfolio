@@ -3,8 +3,8 @@ import icon from "../static/images/icon.jpg";
 import icon2 from "../static/images/icon2.jpg"
 import BusinessCard from  "../components/BusinessCard";
 import SwitchIcon from "../components/SwitchIcon";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import SnsIcon from "../components/SnsIcon";
+
 
 class Index extends React.Component {
   constructor(props) {
@@ -30,12 +30,7 @@ class Index extends React.Component {
                 isHover={this.state.isHover}
                 onHover={this.handleHover.bind(this)}
               />
-              <div className="businessCard__snsIconBox">
-                <FontAwesomeIcon icon={faTwitter} />
-                <FontAwesomeIcon icon={faFacebook} />
-                <FontAwesomeIcon icon={faInstagram} />
-                <FontAwesomeIcon icon={faGithub} />
-              </div>
+              <SnsIcon />
             </div>
             <div className="businessCard__subinfo">
               <div className="businessCard__mail">
