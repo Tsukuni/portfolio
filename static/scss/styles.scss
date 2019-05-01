@@ -217,6 +217,16 @@ p {
       background-color:#1f622e;
     }
   }
+  &__skillBox {
+    width: 50%;
+    height: 100%;
+    float:left;
+  }
+  &__hobbyBox {
+    width: 50%;
+    height: 100%;
+    float:left;
+  }
 }
 
 .front {
