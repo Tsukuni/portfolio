@@ -1,5 +1,18 @@
-// reset
+$mobile: 400px !default;
+$tablet: 769px !default;
+@mixin mobile {
+  @media screen and (max-width: $mobile - 1) {
+    @content;
+  }
+}
 
+@mixin tablet {
+  @media screen and (min-width: $mobile) and (max-width: $tablet) {
+    @content;
+  }
+}
+
+// reset
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -12,30 +25,30 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
 }
 
 body {
-    line-height:1;
+  line-height:1;
 }
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
-    display:block;
+  display:block;
 }
 
 nav ul {
-    list-style:none;
+  list-style:none;
 }
 
 blockquote, q {
-    quotes:none;
+  quotes:none;
 }
 
 blockquote:before, blockquote:after,
@@ -45,54 +58,54 @@ q:before, q:after {
 }
 
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
 }
 
 /* change colours to suit your needs */
 ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
+  background-color:#ff9;
+  color:#000;
+  text-decoration:none;
 }
 
 /* change colours to suit your needs */
 mark {
-    background-color:#ff9;
-    color:#000; 
-    font-style:italic;
-    font-weight:bold;
+  background-color:#ff9;
+  color:#000; 
+  font-style:italic;
+  font-weight:bold;
 }
 
 del {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
+  border-bottom:1px dotted;
+  cursor:help;
 }
 
 table {
-    border-collapse:collapse;
-    border-spacing:0;
+  border-collapse:collapse;
+  border-spacing:0;
 }
 
 /* change border colour to suit your needs */
 hr {
-    display:block;
-    height:1px;
-    border:0;   
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
+  display:block;
+  height:1px;
+  border:0;   
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
 }
 
 input, select {
-    vertical-align:middle;
+  vertical-align:middle;
 }
 
 h1 {
@@ -113,7 +126,6 @@ h4 {
 
 p {
   font-size: 14px;
-  display: inline-block;
   line-height: 20px;
 }
 
@@ -130,10 +142,33 @@ p {
   top: 20%;
   left: 20%;
   width: 60%;
+  min-width: 600px;
   &::before {
     content:"";
     display: block;
     padding-top: 50%;
+  }
+  @include tablet {
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    min-width: 370px;
+    &::before {
+      content:"";
+      display: block;
+      padding-top: 140%;
+    }
+  }
+  @include mobile {
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    min-width: 290px;
+    &::before {
+      content:"";
+      display: block;
+      padding-top: 170%;
+    }
   }
 }
 
@@ -150,10 +185,12 @@ p {
 
 .businessCard {
   position: absolute;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  border-radius: 3px;
   background-color: white;
   padding: 30px;
   box-sizing: border-box;
@@ -161,6 +198,16 @@ p {
     width: 25%;
     height: 100%;
     float: left;
+    @include tablet {
+      width: 100%;
+      height: 35%;
+      margin: auto;
+    }
+    @include mobile {
+      width: 100%;
+      height: 35%;
+      margin: auto;
+    }
   }
   &__right {
     width: 75%;
@@ -168,10 +215,30 @@ p {
     float: left;
     padding-left: 15%;
     box-sizing: border-box;
+    @include tablet {
+      width: 100%;
+      height: 65%;
+      padding: 0;
+    }
+    @include mobile {
+      width: 100%;
+      height: 65%;
+      padding: 0;
+    }
   }
   &__iconBox {
     width: 100%;
     float: left;
+    @include tablet {
+      width: 35%;
+      margin: auto;
+      float: none;
+    }
+    @include mobile {
+      width: 50%;
+      margin: auto;
+      float: none;
+    }
   }
   &__snsIconBox {
     margin-top: 10px;
@@ -195,13 +262,27 @@ p {
   }
   &__profileBox {
     margin-top: 15%;
+    @include mobile {
+      margin-top: 5%;
+    }
+  }
+  &__profileContent {
+    @include mobile {
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
   &__nameBox {
   }
   &__subinfo {
-    width: 25%;
+    width: 30%;
     position: absolute;
     bottom: 30px;
+    @include mobile {
+      display: block;
+      width: 100%;
+      bottom: 72px;
+    }
   }
   &__buttonBox {
     position: absolute;
@@ -224,11 +305,29 @@ p {
   &__detailBox {
     width: 50%;
     height: 100%;
-    float:left;
+    float: left;
+    @include tablet {
+      width: 100%;
+      height: auto;
+      float: none;
+    }
+    @include mobile {
+      width: 100%;
+      height: auto;
+      float: none;
+    }
   }
   &__detail {
-    width:100%;
-    height:35%;
+    width: 100%;
+    height: 35%;
+    @include tablet {
+      width: 100%;
+      height: auto;
+    }
+    @include mobile {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -238,12 +337,12 @@ p {
   left: 0;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  -webkit-transform:perspective(2000) rotateY(0deg);
-  -moz-transform:perspective(2000px) rotateY(0deg);
-  transform:perspective(2000px) rotateY(0deg);
-  -webkit-transition:ease-out 0.5s -webkit-transform;
-  -moz-transition:ease-out 0.5s -moz-transform;
-  transition:ease-out 0.5s transform;
+  -webkit-transform: perspective(2000) rotateY(0deg);
+  -moz-transform: perspective(2000px) rotateY(0deg);
+  transform: perspective(2000px) rotateY(0deg);
+  -webkit-transition: ease-out 0.5s -webkit-transform;
+  -moz-transition: ease-out 0.5s -moz-transform;
+  transition: ease-out 0.5s transform;
 }
 .back {
   position: absolute;
@@ -251,10 +350,10 @@ p {
   left: 0;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  -webkit-transform:perspective(2000) rotateY(90deg);
-  -moz-transform:perspective(2000px) rotateY(90deg);
-  transform:perspective(2000px) rotateY(90deg);
-  -webkit-transition:ease-out 0.5s -webkit-transform;
-  -moz-transition:ease-out 0.5s -moz-transform;
-  transition:ease-out 0.5s transform;
+  -webkit-transform: perspective(2000) rotateY(90deg);
+  -moz-transform: perspective(2000px) rotateY(90deg);
+  transform: perspective(2000px) rotateY(90deg);
+  -webkit-transition: ease-out 0.5s -webkit-transform;
+  -moz-transition: ease-out 0.5s -moz-transform;
+  transition: ease-out 0.5s transform;
 }
