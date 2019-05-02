@@ -36,6 +36,7 @@ time, mark, audio, video {
 
 body {
   line-height:1;
+  font-family: "M PLUS 1p";
 }
 
 article,aside,details,figcaption,figure,
@@ -261,12 +262,13 @@ p {
     border-radius: 100%;
   }
   &__profileBox {
-    margin-top: 15%;
+    margin-top: 10%;
     @include mobile {
       margin-top: 5%;
     }
   }
   &__profileContent {
+    line-height: 20px;
     @include mobile {
       font-size: 12px;
       line-height: 16px;
