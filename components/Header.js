@@ -18,6 +18,7 @@ const Header = ({ title, description, image, url }) => (
     <meta name="twitter:image" content={image} />
     <link rel="shortcut icon" href={image} />
     <link rel="apple-touch-icon" href={image} />
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet"></link>
   </Head>
 )
 
