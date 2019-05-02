@@ -25,30 +25,30 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
 }
 
 body {
-    line-height:1;
+  line-height:1;
 }
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
-    display:block;
+  display:block;
 }
 
 nav ul {
-    list-style:none;
+  list-style:none;
 }
 
 blockquote, q {
-    quotes:none;
+  quotes:none;
 }
 
 blockquote:before, blockquote:after,
@@ -58,54 +58,54 @@ q:before, q:after {
 }
 
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
 }
 
 /* change colours to suit your needs */
 ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
+  background-color:#ff9;
+  color:#000;
+  text-decoration:none;
 }
 
 /* change colours to suit your needs */
 mark {
-    background-color:#ff9;
-    color:#000; 
-    font-style:italic;
-    font-weight:bold;
+  background-color:#ff9;
+  color:#000; 
+  font-style:italic;
+  font-weight:bold;
 }
 
 del {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
+  border-bottom:1px dotted;
+  cursor:help;
 }
 
 table {
-    border-collapse:collapse;
-    border-spacing:0;
+  border-collapse:collapse;
+  border-spacing:0;
 }
 
 /* change border colour to suit your needs */
 hr {
-    display:block;
-    height:1px;
-    border:0;   
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
+  display:block;
+  height:1px;
+  border:0;   
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
 }
 
 input, select {
-    vertical-align:middle;
+  vertical-align:middle;
 }
 
 h1 {
@@ -152,7 +152,7 @@ p {
     top: 10%;
     left: 15%;
     width: 70%;
-    min-width:370px;
+    min-width: 370px;
     &::before {
       content:"";
       display: block;
@@ -163,7 +163,7 @@ p {
     top: 10%;
     left: 5%;
     width: 90%;
-    min-width:290px;
+    min-width: 290px;
     &::before {
       content:"";
       display: block;
@@ -337,12 +337,12 @@ p {
   left: 0;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  -webkit-transform:perspective(2000) rotateY(0deg);
-  -moz-transform:perspective(2000px) rotateY(0deg);
-  transform:perspective(2000px) rotateY(0deg);
-  -webkit-transition:ease-out 0.5s -webkit-transform;
-  -moz-transition:ease-out 0.5s -moz-transform;
-  transition:ease-out 0.5s transform;
+  -webkit-transform: perspective(2000) rotateY(0deg);
+  -moz-transform: perspective(2000px) rotateY(0deg);
+  transform: perspective(2000px) rotateY(0deg);
+  -webkit-transition: ease-out 0.5s -webkit-transform;
+  -moz-transition: ease-out 0.5s -moz-transform;
+  transition: ease-out 0.5s transform;
 }
 .back {
   position: absolute;
@@ -350,10 +350,10 @@ p {
   left: 0;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  -webkit-transform:perspective(2000) rotateY(90deg);
-  -moz-transform:perspective(2000px) rotateY(90deg);
-  transform:perspective(2000px) rotateY(90deg);
-  -webkit-transition:ease-out 0.5s -webkit-transform;
-  -moz-transition:ease-out 0.5s -moz-transform;
-  transition:ease-out 0.5s transform;
+  -webkit-transform: perspective(2000) rotateY(90deg);
+  -moz-transform: perspective(2000px) rotateY(90deg);
+  transform: perspective(2000px) rotateY(90deg);
+  -webkit-transition: ease-out 0.5s -webkit-transform;
+  -moz-transition: ease-out 0.5s -moz-transform;
+  transition: ease-out 0.5s transform;
 }
