@@ -1,4 +1,6 @@
 import "../static/scss/styles.scss";
+import icon from "../static/images/icon.jpg";
+import Header from "../components/Header";
 import BusinessCard from  "../components/BusinessCard";
 
 class Index extends React.Component {
@@ -21,8 +23,14 @@ class Index extends React.Component {
 
   render() {
     const { isHover, isRoll } = this.state;
+
     return (
       <div className="top">
+        <Header
+          title="I AM KENTA TSUKUNI"
+          description="ポートフォリオです。"
+          image={icon}
+        />
         <BusinessCard
           isHover={isHover}
           onHover={this.handleHover.bind(this)}
