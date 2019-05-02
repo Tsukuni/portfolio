@@ -22,7 +22,7 @@ class Index extends React.Component {
   }
 
   render() {
-    const { isHover, isRoll } = this.state;
+    const { isHover } = this.state;
 
     return (
       <div className="top">
@@ -43,7 +43,8 @@ class Index extends React.Component {
 
 const turnOver = isRoll => {
   const front = document.getElementsByClassName("front")[0].style;
-  const back = document.getElementsByClassName("back")[0].style; 
+  const back = document.getElementsByClassName("back")[0].style;
+  back.display = "block";
   if (isRoll) {
     back.WebkitTransform = "perspective(1000) rotateY(90deg)";
     back.MozTransform = "perspective(1000px) rotateY(90deg)";
