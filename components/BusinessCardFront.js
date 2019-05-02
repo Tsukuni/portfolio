@@ -29,12 +29,12 @@ const BusinessCardFront = ({ isHover, onHover, onRoll }) => (
         <p className="small">Kenta Tsukuni</p>
       </div>
       <div className="businessCard__profileBox">
-        <p>
+        <span className="businessCard__profileContent">
           ハリネズミをめっちゃ飼ってるエンジニア。<br/>
           よくわかりませんが会社ではハリネズミハンターと呼ばれています。<br/>
           <br/>
           一緒に魚釣り・スプラトゥーンできる人探してます。
-        </p>
+        </span>
       </div>
       <Button onClick={onRoll}>ウラも見てね</Button>
     </div>
