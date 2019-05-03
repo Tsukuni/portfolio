@@ -1,0 +1,7 @@
+FROM node:10
+
+ENV APP_DIR /portfolio
+
+WORKDIR $APP_DIR
+
+EXPOSE 3000
