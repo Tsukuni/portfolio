@@ -1,0 +1,13 @@
+version: '3'
+services:
+  portfolio:
+    container_name: portfolio
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/portfolio:cached
+    ports:
+      - 3000:3000
+    command: [sh, -c, yarn install && yarn build && yarn start]
