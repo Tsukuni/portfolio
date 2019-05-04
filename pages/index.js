@@ -30,6 +30,7 @@ class Index extends React.Component {
           title="I AM KENTA TSUKUNI"
           description="ポートフォリオです。"
           image={icon}
+          url="https://tsukunin.site"
         />
         <BusinessCard
           isHover={isHover}
