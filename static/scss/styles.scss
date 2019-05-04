@@ -1,3 +1,4 @@
+@import "./rest.scss";
 $mobile: 400px !default;
 $tablet: 769px !default;
 @mixin mobile {
@@ -12,124 +13,6 @@ $tablet: 769px !default;
   }
 }
 
-// reset
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
-}
-
-body {
-  line-height:1;
-  font-family: "M PLUS 1p";
-}
-
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
-  display:block;
-}
-
-nav ul {
-  list-style:none;
-}
-
-blockquote, q {
-  quotes:none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
-}
-
-a {
-  margin:0;
-  padding:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
-}
-
-/* change colours to suit your needs */
-ins {
-  background-color:#ff9;
-  color:#000;
-  text-decoration:none;
-}
-
-/* change colours to suit your needs */
-mark {
-  background-color:#ff9;
-  color:#000; 
-  font-style:italic;
-  font-weight:bold;
-}
-
-del {
-  text-decoration: line-through;
-}
-
-abbr[title], dfn[title] {
-  border-bottom:1px dotted;
-  cursor:help;
-}
-
-table {
-  border-collapse:collapse;
-  border-spacing:0;
-}
-
-/* change border colour to suit your needs */
-hr {
-  display:block;
-  height:1px;
-  border:0;   
-  border-top:1px solid #cccccc;
-  margin:1em 0;
-  padding:0;
-}
-
-input, select {
-  vertical-align:middle;
-}
-
-h1 {
-  font-size: 42px;
-}
-
-h2 {
-  font-size: 32px;
-}
-
-h3 {
-  font-size: 24px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-p {
-  font-size: 14px;
-  line-height: 20px;
-}
-
 .small {
   font-size: 12px;
 }
@@ -140,18 +23,16 @@ p {
 
 .wrapper {
   position: relative;
-  top: 20%;
-  left: 20%;
   width: 60%;
+  box-sizing: border-box;
   min-width: 600px;
+  margin: auto;
   &::before {
     content:"";
     display: block;
     padding-top: 50%;
   }
   @include tablet {
-    top: 10%;
-    left: 15%;
     width: 70%;
     min-width: 370px;
     &::before {
@@ -161,10 +42,8 @@ p {
     }
   }
   @include mobile {
-    top: 10%;
-    left: 5%;
-    width: 90%;
-    min-width: 290px;
+    width: 80%;
+    min-width: 295px;
     &::before {
       content:"";
       display: block;
@@ -178,11 +57,14 @@ p {
 }
 
 .top {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  box-sizing: border-box;
   position: relative;
-  background-color:rgb(31, 98, 46);
-
+  background-color:rgb(19, 59, 28);
 }
 
 .businessCard {
