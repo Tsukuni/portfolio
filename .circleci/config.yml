@@ -1,33 +1,61 @@
-# Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
-version: 2.1
+version: 2
+
 jobs:
   build:
-    branches:
-      only:
-        - master
-      docker:
-        - image: circleci/node:latest
-      working_directory: ~/portfolio
+    docker:
+      - image: circleci/node:8.12.0
+    working_directory: ~/workspace
 
-      steps:
-        - checkout
-        - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+    steps:
+      - checkout
+      - restore_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: install dependencies
+          command: yarn install
+      - run:
+          # NOTE: Added a command to avoid build failures
+          # Node Sass could not find a binding for your current environment: Linux 64-bit with Node.js 8.x
+          name: rebuild node-sass
+          command: yarn add node-sass --force
 
-        - run: yarn install
-
-        - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-        - run:
-          name:
+      # ビルド実行
+      - run:
+          name: build
           command: yarn export
+      - save_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/workspace/node_modules
+      # ビルドした結果をdeployジョブでも利用するために一時保存
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
 
-        - run:
-          name: Deploy to Firebase
-          command: firebase deploy --token=$FIREBASE_TOKEN
+  deploy:
+    docker:
+      - image: circleci/node:8.12.0
+    working_directory: ~/workspace
+
+    steps:
+      # buildジョブで一時保存されたビルド結果を読み込む
+      - attach_workspace:
+          at: .
+      - run:
+          # Firebaseへデプロイ
+          name: deploy to firebase
+          command: firebase deploy --token $FIREBASE_TOKEN
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          # masterブランチのコミットのみデプロイ
+          filters:
+            branches:
+              only: master
