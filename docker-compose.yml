@@ -6,8 +6,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+
     volumes:
       - ./:/portfolio:cached
     ports:
       - 3000:3000
-    command: [sh, -c, yarn install && yarn build && yarn start]
+    command: [sh, -c, yarn dev]

@@ -181,7 +181,8 @@ p {
   width: 100vw;
   height: 100vh;
   position: relative;
-  background-color: gray;
+  background-color:rgb(31, 98, 46);
+
 }
 
 .businessCard {
@@ -192,7 +193,7 @@ p {
   bottom: 0;
   right: 0;
   border-radius: 3px;
-  background-color: white;
+  background-color:rgb(251, 242, 229);
   padding: 30px;
   box-sizing: border-box;
   &__left {

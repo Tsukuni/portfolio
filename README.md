@@ -1,6 +1,11 @@
 # ポートフォリオ
 
+ローカル実行方法
+
 ``git clone https://github.com/Tsukuni/portfolio.git``
+
 ``cd portfolio``
+
 ``docker-compose build``
-``docker-compose -f docker-compose -f docker-compose.dev.yml up -d``
+
+``docker-compose up -d``
