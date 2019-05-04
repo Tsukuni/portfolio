@@ -2,6 +2,7 @@ import "../static/scss/styles.scss";
 import icon from "../static/images/icon.jpg";
 import Header from "../components/Header";
 import BusinessCard from  "../components/BusinessCard";
+import Layout from '../components/Layout';
 
 class Index extends React.Component {
   constructor(props) {
@@ -25,19 +26,21 @@ class Index extends React.Component {
     const { isHover } = this.state;
 
     return (
-      <div className="top">
-        <Header
-          title="I AM KENTA TSUKUNI"
-          description="ポートフォリオです。"
-          image={icon}
-          url="https://tsukunin.site"
-        />
-        <BusinessCard
-          isHover={isHover}
-          onHover={this.handleHover.bind(this)}
-          onRoll={this.handleRoll.bind(this)}
-        />
-      </div>
+      <Layout>
+        <div className="top">
+          <Header
+            title="I AM KENTA TSUKUNI"
+            description="ポートフォリオです。"
+            image={icon}
+            url="https://tsukunin.site"
+          />
+          <BusinessCard
+            isHover={isHover}
+            onHover={this.handleHover.bind(this)}
+            onRoll={this.handleRoll.bind(this)}
+          />
+        </div>
+      </Layout>
     )
   }
 }
