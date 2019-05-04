@@ -8,16 +8,16 @@ const Header = ({ title, description, image, url }) => (
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={url} />
-    <meta property="og:image" href={image} />
+    <meta property="og:image" content={url+image} />
     <meta property="og:site_name" content={title} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@tteooiyry" />
     <meta name="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" href={image} />
-    <link rel="shortcut icon" href={image} />
-    <link rel="apple-touch-icon" href={image} />
+    <meta name="twitter:image" content={url+image} />
+    <link rel="shortcut icon" href={url+image} />
+    <link rel="apple-touch-icon" href={url+image} />
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet"></link>
   </Head>
 )
