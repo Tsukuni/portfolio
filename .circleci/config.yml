@@ -6,28 +6,42 @@ jobs:
       only:
         - master
       docker:
-        - image: circleci/node:latest
+        - image: circleci/node:9.5
       working_directory: ~/portfolio
 
-      steps:
-        - checkout
-        - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+#       steps:
+#         - checkout
+#         - restore_cache:
+#           keys:
+#           - v1-dependencies-{{ checksum "package.json" }}
+#           # fallback to using the latest cache if no exact match is found
+#           - v1-dependencies-
 
-        - run: yarn install
+#         - run: yarn install
 
-        - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+#         - save_cache:
+#           paths:
+#             - node_modules
+#           key: v1-dependencies-{{ checksum "package.json" }}
 
-        - run:
-          name:
-          command: yarn export
+#         - run:
+#           name:
+#           command: yarn export
 
-        - run:
-          name: Deploy to Firebase
-          command: firebase deploy --token=$FIREBASE_TOKEN
+#         - run:
+#           name: Deploy to Firebase
+#           command: firebase deploy --token=$FIREBASE_TOKEN
+
+# version: 2
+# jobs:
+#   build:
+#     docker:
+#       - image: debian:stretch
+#     steps:
+#       - checkout
+#       - run:
+#           name: Greeting
+#           command: echo Hello, world.
+#       - run:
+#           name: Print the Current Time
+#           command: date 
