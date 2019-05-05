@@ -1,23 +1,29 @@
+import * as React from 'react';
 import "../static/scss/styles.scss";
-import icon from "../static/images/icon.jpg";
 import Header from "../components/Header";
 import BusinessCard from  "../components/BusinessCard";
 import Layout from '../components/Layout';
+const icon = require("../static/images/icon.jpg");
 
-class Index extends React.Component {
-  constructor(props) {
-    super(props)
+interface State {
+  isHover: boolean;
+  isRoll: boolean;
+}
+
+export default class Index extends React.Component<{}, State> {
+  constructor(props: any) {
+    super(props);
     this.state = {
       isHover: false,
-      isRoll: false,
+      isRoll: false
     }
   }
 
-  handleHover() {
+  handleHover = () => {
     this.setState({ ...this.state, isHover: !this.state.isHover })
   }
 
-  handleRoll() {
+  handleRoll = () => {
     turnOver(this.state.isRoll);
     this.setState({ ...this.state, isRoll: !this.state.isRoll });
   }
@@ -45,7 +51,7 @@ class Index extends React.Component {
   }
 }
 
-const turnOver = isRoll => {
+const turnOver = (isRoll: boolean): void => {
   const front = document.getElementsByClassName("front")[0].style;
   const back = document.getElementsByClassName("back")[0].style;
   back.display = "block";
@@ -71,5 +77,3 @@ const turnOver = isRoll => {
     } , 500);
   }
 }
-
-export default Index;

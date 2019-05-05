@@ -1,19 +1,24 @@
-import PropTypes from "prop-types";
 import SwitchIcon from "./SwitchIcon";
 import SnsIcon from "./SnsIcon";
 import Button from "./Button";
-import icon from "../static/images/icon.jpg";
-import icon2 from "../static/images/icon2.jpg";
+const icon = require("../static/images/icon.jpg");
+const icon2 = require("../static/images/icon2.jpg");
 
-const BusinessCardFront = ({ isHover, onHover, onRoll }) => (
+interface Props {
+  isHover: boolean;
+  onHover: () => void;
+  onRoll: () => void;
+}
+
+const BusinessCardFront = (props: Props) => (
   <div className="businessCard front">
     <div className="businessCard__left">
       <div className="businessCard__iconBox">
         <SwitchIcon
           mainIcon={icon}
           subIcon={icon2}
-          isHover={isHover}
-          onHover={onHover}
+          isHover={props.isHover}
+          onHover={props.onHover}
         />
         <SnsIcon />
       </div>
@@ -36,15 +41,9 @@ const BusinessCardFront = ({ isHover, onHover, onRoll }) => (
           一緒に魚釣り・スプラトゥーンできる人探してます。
         </span>
       </div>
-      <Button onClick={onRoll}>ウラも見てね</Button>
+      <Button onClick={props.onRoll}>ウラも見てね</Button>
     </div>
   </div>
 )
-
-BusinessCardFront.protoTypes = {
-  isHover: PropTypes.bool.isHover,
-  onHover: PropTypes.func.isRequired,
-  onRoll: PropTypes.func.isRequired,
-}
 
 export default BusinessCardFront;
