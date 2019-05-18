@@ -1,6 +1,10 @@
 import Button from "./Button";
 
-const BusinessCardBack = ({ onRoll }) => (
+interface Props {
+  onRoll: () => void;
+}
+
+const BusinessCardBack = (props: Props) => (
   <div className="businessCard back">
     <div className="businessCard__detailBox">
       <div className="businessCard__detail">
@@ -23,7 +27,7 @@ const BusinessCardBack = ({ onRoll }) => (
         <p>空手(初段), 囲碁(初段), ピアノ</p>
       </div>
     </div>
-    <Button onClick={onRoll}>おもてに戻る</Button>
+    <Button onClick={props.onRoll}>おもてに戻る</Button>
   </div>
 )
 
