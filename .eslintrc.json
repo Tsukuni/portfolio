@@ -21,4 +21,3 @@
     "react/jsx-no-target-blank": "error",
     "no-unused-vars": "off"
   }
-}
