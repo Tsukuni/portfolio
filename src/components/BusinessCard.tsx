@@ -1,5 +1,6 @@
-import BusinessCardFront from "./BusinessCardFront";
-import BusinessCardBack from "./BusinessCardBack";
+import * as React from 'react';
+import BusinessCardFront from './BusinessCardFront';
+import BusinessCardBack from './BusinessCardBack';
 
 interface Props {
   isHover: boolean;
@@ -16,6 +17,6 @@ const BusinessCard = (props: Props) => (
     />
     <BusinessCardBack onRoll={props.onRoll} />
   </div>
-)
+);
 
 export default BusinessCard;

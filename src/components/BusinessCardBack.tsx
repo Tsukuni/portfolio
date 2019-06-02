@@ -1,4 +1,5 @@
-import Button from "./Button";
+import * as React from 'react';
+import Button from './Button';
 
 interface Props {
   onRoll: () => void;
@@ -29,6 +30,6 @@ const BusinessCardBack = (props: Props) => (
     </div>
     <Button onClick={props.onRoll}>おもてに戻る</Button>
   </div>
-)
+);
 
 export default BusinessCardBack;

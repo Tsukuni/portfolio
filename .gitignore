@@ -3,3 +3,5 @@
 /yarn-error.log
 /.firebase
 /out
+/public/bundle.js
+/public/bundle.js.map
