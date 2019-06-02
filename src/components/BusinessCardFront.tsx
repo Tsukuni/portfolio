@@ -1,8 +1,9 @@
+import * as React from 'react';
 import SwitchIcon from "./SwitchIcon";
 import SnsIcon from "./SnsIcon";
 import Button from "./Button";
-const icon = require("../static/images/icon.jpg");
-const icon2 = require("../static/images/icon2.jpg");
+const icon = require("../../public/images/icon.jpg");
+const icon2 = require("../../public/images/icon2.jpg");
 
 interface Props {
   isHover: boolean;

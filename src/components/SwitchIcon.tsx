@@ -1,3 +1,4 @@
+import * as React from 'react';
 interface Props {
   mainIcon: string;
   subIcon: string;
