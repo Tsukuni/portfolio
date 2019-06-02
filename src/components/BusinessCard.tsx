@@ -1,3 +1,4 @@
+import * as React from 'react';
 import BusinessCardFront from "./BusinessCardFront";
 import BusinessCardBack from "./BusinessCardBack";
 

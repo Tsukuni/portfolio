@@ -22,7 +22,7 @@ jobs:
       # ビルド実行
       - run:
           name: build
-          command: yarn export
+          command: yarn build
       - save_cache:
           key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
