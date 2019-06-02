@@ -1,9 +1,9 @@
 import * as React from 'react';
-import SwitchIcon from "./SwitchIcon";
-import SnsIcon from "./SnsIcon";
-import Button from "./Button";
-const icon = require("../../public/images/icon.jpg");
-const icon2 = require("../../public/images/icon2.jpg");
+import SwitchIcon from './SwitchIcon';
+import SnsIcon from './SnsIcon';
+import Button from './Button';
+import icon from '../../public/images/icon.jpg';
+import icon2 from '../../public/images/icon2.jpg';
 
 interface Props {
   isHover: boolean;
@@ -36,15 +36,17 @@ const BusinessCardFront = (props: Props) => (
       </div>
       <div className="businessCard__profileBox">
         <span className="businessCard__profileContent">
-          ハリネズミをめっちゃ飼ってるエンジニア。<br/>
-          よくわかりませんが会社ではハリネズミハンターと呼ばれています。<br/>
-          <br/>
+          ハリネズミをめっちゃ飼ってるエンジニア。
+          <br />
+          よくわかりませんが会社ではハリネズミハンターと呼ばれています。
+          <br />
+          <br />
           一緒に魚釣り・スプラトゥーンできる人探してます。
         </span>
       </div>
       <Button onClick={props.onRoll}>ウラも見てね</Button>
     </div>
   </div>
-)
+);
 
 export default BusinessCardFront;
