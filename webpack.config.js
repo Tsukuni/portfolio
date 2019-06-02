@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'source-map',
 
   resolve: {
-    modules: [ 'node_modules' ],
+    modules: ['node_modules'],
     extensions: ['.ts', '.tsx', '.js']
   },
 
@@ -19,9 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: [
-          {loader: 'ts-loader'}
-        ]
+        use: [{ loader: 'ts-loader' }]
       },
       {
         test: /\.(sc|sa|c)ss/,
@@ -29,15 +27,13 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)(\?.+)?$/,
-        include: [
-          path.resolve(__dirname, 'public', 'images')
-        ],
+        include: [path.resolve(__dirname, 'public', 'images')],
         use: {
-            loader: 'url-loader',
-            options: {
-                limit: 8192,
-                name: './img/[name].[ext]'
-            }
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+            name: './img/[name].[ext]'
+          }
         }
       }
     ]

@@ -3,7 +3,12 @@ import * as React from 'react';
 // import { fas } from '@fortawesome/free-solid-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import {
+  faGithub,
+  faTwitter,
+  faFacebook,
+  faInstagram
+} from '@fortawesome/free-brands-svg-icons';
 
 const SnsIcon = () => (
   <div className="businessCard__snsIconBox">
@@ -20,6 +25,6 @@ const SnsIcon = () => (
       <FontAwesomeIcon icon={faGithub} />
     </a>
   </div>
-)
+);
 
 export default SnsIcon;
