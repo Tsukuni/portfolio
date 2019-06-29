@@ -1,43 +1,26 @@
 import * as React from 'react';
 import '../../public/css/styles.scss';
 import BusinessCard from '../components/BusinessCard';
+import { topStateType } from '../module/top';
+import { topActionType } from '../containers/TopPageContainer'
 
-interface State {
-  isHover: boolean;
-  isRoll: boolean;
-}
+type TopProps = topStateType & topActionType;
 
-export default class TopPage extends React.Component<{}, State> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      isHover: false,
-      isRoll: false
-    };
+const TopPage: React.SFC<TopProps> = (props: TopProps) =>  {
+  const handleRoll = (): void => {
+    console.log(props)
+    turnOver(props.isRoll);
+    props.rollCard()
   }
-
-  handleHover = () => {
-    this.setState({ ...this.state, isHover: !this.state.isHover });
-  };
-
-  handleRoll = () => {
-    turnOver(this.state.isRoll);
-    this.setState({ ...this.state, isRoll: !this.state.isRoll });
-  };
-
-  render() {
-    const { isHover } = this.state;
-
-    return (
-      <div className="top">
-        <BusinessCard
-          isHover={isHover}
-          onHover={this.handleHover.bind(this)}
-          onRoll={this.handleRoll.bind(this)}
-        />
-      </div>
-    );
-  }
+  return (
+    <div className="top">
+      <BusinessCard
+        isHover={props.isHover}
+        onHover={props.updateIsHover}
+        onRoll={handleRoll}
+      />
+    </div>
+  )
 }
 
 const turnOver = (isRoll: boolean): void => {
@@ -66,3 +49,5 @@ const turnOver = (isRoll: boolean): void => {
     }, 500);
   }
 };
+
+export default TopPage
