@@ -1,14 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
+  mode: isDev ? 'development' : 'production',
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
   },
 
-  devtool: 'source-map',
+  devtool: isDev ? 'source-map' : '',
 
   resolve: {
     modules: ['node_modules'],

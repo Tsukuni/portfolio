@@ -8,7 +8,6 @@ type TopProps = topStateType & topActionType;
 
 const TopPage: React.SFC<TopProps> = (props: TopProps) =>  {
   const handleRoll = (): void => {
-    console.log(props)
     turnOver(props.isRoll);
     props.rollCard()
   }
