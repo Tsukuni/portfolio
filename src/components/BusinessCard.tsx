@@ -8,14 +8,14 @@ interface Props {
   onRoll: () => void;
 }
 
-const BusinessCard = (props: Props) => (
+const BusinessCard = ({ isHover, onHover, onRoll }: Props) => (
   <div className="wrapper">
     <BusinessCardFront
-      isHover={props.isHover}
-      onHover={props.onHover}
-      onRoll={props.onRoll}
+      isHover={isHover}
+      onHover={onHover}
+      onRoll={onRoll}
     />
-    <BusinessCardBack onRoll={props.onRoll} />
+    <BusinessCardBack onRoll={onRoll} />
   </div>
 );
 

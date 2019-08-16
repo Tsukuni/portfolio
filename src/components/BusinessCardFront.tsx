@@ -11,15 +11,15 @@ interface Props {
   onRoll: () => void;
 }
 
-const BusinessCardFront = (props: Props) => (
+const BusinessCardFront = ({ isHover, onHover, onRoll }: Props) => (
   <div className="businessCard front">
     <div className="businessCard__left">
       <div className="businessCard__iconBox">
         <SwitchIcon
           mainIcon={icon}
           subIcon={icon2}
-          isHover={props.isHover}
-          onHover={props.onHover}
+          isHover={isHover}
+          onHover={onHover}
         />
         <SnsIcon />
       </div>
@@ -44,7 +44,7 @@ const BusinessCardFront = (props: Props) => (
           一緒に魚釣り・スプラトゥーンできる人探してます。
         </span>
       </div>
-      <Button onClick={props.onRoll}>ウラも見てね</Button>
+      <Button onClick={onRoll}>ウラも見てね</Button>
     </div>
   </div>
 );
