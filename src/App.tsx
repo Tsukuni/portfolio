@@ -1,11 +1,11 @@
 import * as React from 'react';
-import TopPageContainer from './containers/TopPageContainer';
+import TopContainer from './containers/TopContainer';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <TopPageContainer />
+        <TopContainer />
       </div>
     );
   }

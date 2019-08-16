@@ -1,21 +1,21 @@
 import * as React from 'react';
 import '../../public/css/styles.scss';
 import BusinessCard from '../components/BusinessCard';
-import { topStateType } from '../module/top';
-import { topActionType } from '../containers/TopPageContainer'
 
-type TopProps = topStateType & topActionType;
+const TopContainer: React.SFC = () =>  {
+  const [isHover, setIsHover] = React.useState<boolean>(false);
+  const [isRoll, setIsRoll] = React.useState<boolean>(false);
 
-const TopPage: React.SFC<TopProps> = (props: TopProps) =>  {
-  const handleRoll = (): void => {
-    turnOver(props.isRoll);
-    props.rollCard()
+  const handleRoll = () => {
+    turnOver(isRoll);
+    setIsRoll(!isRoll);
   }
+
   return (
     <div className="top">
       <BusinessCard
-        isHover={props.isHover}
-        onHover={props.updateIsHover}
+        isHover={isHover}
+        onHover={() => setIsHover}
         onRoll={handleRoll}
       />
     </div>
@@ -49,4 +49,4 @@ const turnOver = (isRoll: boolean): void => {
   }
 };
 
-export default TopPage
+export default TopContainer;

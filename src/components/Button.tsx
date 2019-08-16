@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface Props {
-  children: any;
+  children: string;
   onClick: () => void;
 }
 
