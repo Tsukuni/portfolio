@@ -9,8 +9,8 @@ const TopContainer: React.SFC = () => (
 )
 
 const Top = styled.div`
-  min-width: 100vw;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   padding-top: 10%;
   padding-bottom: 10%;
   box-sizing: border-box;
