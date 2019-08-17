@@ -41,7 +41,7 @@ const ProfileCardFront = ({ onRoll }: Props) => (
     <Right>
       <>
         <Small>ENGINEER</Small>
-        <h2>津國健太</h2>
+        <Name>津國健太</Name>
         <Small>Kenta Tsukuni</Small>
       </>
       <ProfileBox>
@@ -139,7 +139,12 @@ const SubInfo = styled.div`
 `;
 
 const Small = styled.p`
-  font-size: 1.2em;
+  font-size: 1.0em;
+`;
+
+const Name = styled.h1`
+  font-size: 2.4em;
+  margin: 8px 0;
 `;
 
 export default ProfileCardFront;
