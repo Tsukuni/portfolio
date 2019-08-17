@@ -96,12 +96,12 @@ const SubInfo = styled.div`
 
   ${media.lessThan("medium")`
     bottom: 70px;
-    left: 171px;
+    left: 123px;
   `}
 
   ${media.lessThan("small")`
     bottom: 70px;
-    left: 131px;
+    left: 93px;
   `}
 `;
 
