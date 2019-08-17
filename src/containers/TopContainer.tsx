@@ -1,30 +1,37 @@
 import * as React from 'react';
-import '../../public/css/styles.scss';
-import BusinessCard from '../components/BusinessCard';
-import { topStateType } from '../module/top';
-import { topActionType } from '../containers/TopPageContainer'
+import styled from 'styled-components';
+import ProfileCard from '../components/ProfileCard';
 
-type TopProps = topStateType & topActionType;
+const TopContainer: React.SFC = () =>  {
+  const [isRoll, setIsRoll] = React.useState<boolean>(false);
 
-const TopPage: React.SFC<TopProps> = (props: TopProps) =>  {
-  const handleRoll = (): void => {
-    turnOver(props.isRoll);
-    props.rollCard()
+  const handleRoll = () => {
+    turnOver(isRoll);
+    setIsRoll(!isRoll);
   }
+
   return (
-    <div className="top">
-      <BusinessCard
-        isHover={props.isHover}
-        onHover={props.updateIsHover}
-        onRoll={handleRoll}
-      />
-    </div>
+    <Top>
+      <ProfileCard onRoll={handleRoll} />
+    </Top>
   )
 }
 
+const Top = styled.div`
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  box-sizing: border-box;
+  position: relative;
+  background-color:rgb(19, 59, 28);
+`;
+
+
 const turnOver = (isRoll: boolean): void => {
-  const front: any = document.getElementsByClassName('front')[0];
-  const back: any = document.getElementsByClassName('back')[0];
+  const front: any = document.getElementById('js-profileFront');
+  const back: any = document.getElementById('js-profileBack');
   back.style.display = 'block';
   if (isRoll) {
     back.style.WebkitTransform = 'perspective(1000) rotateY(90deg)';
@@ -49,4 +56,4 @@ const turnOver = (isRoll: boolean): void => {
   }
 };
 
-export default TopPage
+export default TopContainer;

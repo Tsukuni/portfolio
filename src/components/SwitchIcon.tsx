@@ -1,17 +1,26 @@
 import * as React from 'react';
+import styled from 'styled-components';
+
 interface Props {
   mainIcon: string;
   subIcon: string;
-  isHover: boolean;
-  onHover: () => void;
 }
-const SwitchIcon = (props: Props) => (
-  <img
-    src={props.isHover ? props.subIcon : props.mainIcon}
-    onMouseEnter={props.onHover}
-    onMouseLeave={props.onHover}
-    className="businessCard__profileIcon"
-  />
-);
+
+const SwitchIcon = ({ mainIcon, subIcon }: Props) => {
+  const [isHover, setIsHover] = React.useState<boolean>(false);
+
+  return (
+    <Image
+      src={isHover ? subIcon : mainIcon}
+      onMouseEnter={() => setIsHover(!isHover)}
+      onMouseLeave={() => setIsHover(!isHover)}
+    />
+  )
+};
+
+const Image = styled.img`
+  width: 100%;
+  border-radius: 100%;
+`;
 
 export default SwitchIcon;

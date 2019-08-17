@@ -1,12 +1,14 @@
 import * as React from 'react';
-import TopPageContainer from './containers/TopPageContainer';
+import { Reset } from 'styled-reset';
+import TopContainer from './containers/TopContainer';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <TopPageContainer />
-      </div>
+      <React.Fragment>
+        <Reset />
+        <TopContainer />
+      </React.Fragment>
     );
   }
 }
