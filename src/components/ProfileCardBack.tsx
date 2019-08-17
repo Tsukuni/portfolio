@@ -17,7 +17,7 @@ const ProfileCardBack = ({ onRoll }: Props) => (
       </Detail>
       <Detail>
         <Title>スキル</Title>
-        <p>HTML, CSS, Javascript, React, Ruby, RubyonRails</p>
+        <p>HTML, CSS, Javascript, React, TypeScript, Ruby, RubyonRails</p>
       </Detail>
     </DetailBox>
     <DetailBox>
@@ -29,19 +29,18 @@ const ProfileCardBack = ({ onRoll }: Props) => (
         <Title>特技</Title>
         <p>空手(初段), 囲碁(初段), ピアノ</p>
       </Detail>
+      <Button onClick={onRoll}>おもてに戻る</Button>
     </DetailBox>
-    <Button onClick={onRoll}>おもてに戻る</Button>
   </>
 );
 
 const DetailBox = styled.div`
+  position:relative;
   width: 50%;
   height: 100%;
-  float: left;
   ${media.lessThan("medium")`
     width: 100%;
-    height: auto;
-    float: none;
+    height: 50%;
   `}
 `;
 
@@ -50,12 +49,14 @@ const Detail = styled.div`
   height: 35%;
   ${media.lessThan("medium")`
     width: 100%;
-    height: auto;
+    height: 50%;
   `}
 `;
 
 const Title = styled.h3`
-  margin: 10px 0;
+  margin: 12px 0;
+  font-size: 1.4em;
+  font-weight: bold;
 `;
 
 export default ProfileCardBack;

@@ -44,14 +44,8 @@ const ProfileCardFront = ({ onRoll }: Props) => (
         <Small>Kenta Tsukuni</Small>
       </>
       <ProfileBox>
-        <ProfileContent>
-          ハリネズミをめっちゃ飼ってるエンジニア。
-          <br />
-          よくわかりませんが会社ではハリネズミハンターと呼ばれています。
-          <br />
-          <br />
-          一緒に魚釣り・スプラトゥーンできる人探してます。
-        </ProfileContent>
+        ハリネズミ系エンジニアです。<br />
+        一緒に魚釣り・スプラトゥーンできる人探してます。
       </ProfileBox>
       <Button onClick={onRoll}>ウラも見てね</Button>
     </Right>
@@ -59,67 +53,55 @@ const ProfileCardFront = ({ onRoll }: Props) => (
 );
 
 const Left = styled.div`
-  width: 25%;
+  position: relative;
+  width: 30%;
   height: 100%;
-  float: left;
   ${media.lessThan("medium")`
+    position: static;
     width: 100%;
     height: 35%;
-    margin: auto;
   `}
 `
 
 const Right = styled.div`
-  width: 75%;
+  position: relative;
+  width: 70%;
   height: 100%;
-  float: left;
   padding-left: 15%;
   box-sizing: border-box;
   ${media.lessThan("medium")`
     width: 100%;
     height: 65%;
     padding: 0;
+    padding-top: 24px;
   `}
 `
 
 const IconBox = styled.div`
   width: 100%;
-  float: left;
   ${media.lessThan("medium")`
-    width: 35%;
-    margin: auto;
-    float: none;
-  `}
-  ${media.lessThan("small")`
     width: 50%;
     margin: auto;
-    float: none;
   `}
 `;
 
 const ProfileBox = styled.div`
   margin-top: 10%;
-  ${media.lessThan("small")`
-    margin-top: 5%;
-  `}
-`;
-
-const ProfileContent = styled.span`
-  line-height: 20px;
-  ${media.lessThan("small")`
-    font-size: 12px;
-    line-height: 16px;
-  `}
 `;
 
 const SubInfo = styled.div`
-  width: 30%;
+  width: 100%;
   position: absolute;
-  bottom: 30px;
+  bottom: 0px;
+
   ${media.lessThan("medium")`
-    display: block;
-    width: 100%;
-    bottom: 72px;
+    bottom: 70px;
+    left: 171px;
+  `}
+
+  ${media.lessThan("small")`
+    bottom: 70px;
+    left: 131px;
   `}
 `;
 
