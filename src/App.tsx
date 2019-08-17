@@ -1,12 +1,14 @@
 import * as React from 'react';
+import { Reset } from 'styled-reset';
 import TopContainer from './containers/TopContainer';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <React.Fragment>
+        <Reset />
         <TopContainer />
-      </div>
+      </React.Fragment>
     );
   }
 }

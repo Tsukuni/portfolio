@@ -1,14 +1,35 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
 interface Props {
   children: string;
   onClick: () => void;
 }
 
-const Button = (props: Props) => (
-  <div className="businessCard__buttonBox" onClick={props.onClick}>
-    <span className="businessCard__button">{props.children}</span>
-  </div>
+const Button = ({ children, onClick }: Props) => (
+  <Wrapper onClick={onClick}>
+    <Label>{children}</Label>
+  </Wrapper>
 );
+
+const Wrapper = styled.div`
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+`;
+
+const Label = styled.span`
+  color:#1f622e;
+  padding: 12px 24px;
+  font-weight: 500;
+  border: solid 1px#1f622e;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: white;
+    background-color:#1f622e;
+  }
+`;
 
 export default Button;

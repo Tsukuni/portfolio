@@ -24,10 +24,6 @@ module.exports = {
         use: [{ loader: 'ts-loader' }]
       },
       {
-        test: /\.(sc|sa|c)ss/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
-      },
-      {
         test: /\.(jpe?g|png|gif|svg|ico)(\?.+)?$/,
         include: [path.resolve(__dirname, 'public', 'images')],
         use: {
