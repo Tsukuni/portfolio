@@ -11,7 +11,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import SnsIcon from './SnsIcon';
 import Button from './Button';
-import Card from './Card';
 const icon = require('../../public/images/icon.jpg');
 const icon2 = require('../../public/images/icon2.jpg');
 
@@ -20,7 +19,7 @@ interface Props {
 }
 
 const ProfileCardFront = ({ onRoll }: Props) => (
-  <CardFront id="js-profileFront">
+  <>
     <Left>
       <IconBox>
         <SwitchIcon mainIcon={icon} subIcon={icon2} />
@@ -56,22 +55,8 @@ const ProfileCardFront = ({ onRoll }: Props) => (
       </ProfileBox>
       <Button onClick={onRoll}>ウラも見てね</Button>
     </Right>
-  </CardFront>
+  </>
 );
-
-const CardFront = styled(Card)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transform: perspective(2000) rotateY(0deg);
-  -moz-transform: perspective(2000px) rotateY(0deg);
-  transform: perspective(2000px) rotateY(0deg);
-  -webkit-transition: ease-out 0.5s -webkit-transform;
-  -moz-transition: ease-out 0.5s -moz-transform;
-  transition: ease-out 0.5s transform;
-`
 
 const Left = styled.div`
   width: 25%;

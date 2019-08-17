@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import media from "styled-media-query";
-import Card from "./Card";
 import Button from './Button';
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
 }
 
 const ProfileCardBack = ({ onRoll }: Props) => (
-  <CardBack id="js-profileBack">
+  <>
     <DetailBox>
       <Detail>
         <Title>職歴</Title>
@@ -32,23 +31,8 @@ const ProfileCardBack = ({ onRoll }: Props) => (
       </Detail>
     </DetailBox>
     <Button onClick={onRoll}>おもてに戻る</Button>
-  </CardBack>
+  </>
 );
-
-const CardBack = styled(Card)`
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transform: perspective(2000) rotateY(90deg);
-  -moz-transform: perspective(2000px) rotateY(90deg);
-  transform: perspective(2000px) rotateY(90deg);
-  -webkit-transition: ease-out 0.5s -webkit-transform;
-  -moz-transition: ease-out 0.5s -moz-transform;
-  transition: ease-out 0.5s transform;
-`
 
 const DetailBox = styled.div`
   width: 50%;

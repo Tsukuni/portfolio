@@ -1,19 +1,24 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import media from 'styled-media-query';
+import Card from './Card'
 import ProfileCardFront from './ProfileCardFront';
 import ProfileCardBack from './ProfileCardBack';
 
-interface Props {
-  onRoll: () => void;
-}
 
-const ProfileCard = ({ onRoll }: Props) => (
-  <Wrapper>
-    <ProfileCardFront onRoll={onRoll} />
-    <ProfileCardBack onRoll={onRoll} />
-  </Wrapper>
-);
+const ProfileCard = () => {
+  const [isRoll, setIsRoll] = React.useState(false);
+
+  return (
+    <Wrapper>
+      <Card>
+      {
+        isRoll ? <ProfileCardBack onRoll={() => setIsRoll(!isRoll)} /> : <ProfileCardFront onRoll={() => setIsRoll(!isRoll)} /> 
+      }
+      </Card>
+    </Wrapper>
+  )
+};
 
 const Wrapper = styled.div`
   position: relative;
