@@ -13,11 +13,6 @@ jobs:
       - run:
           name: install dependencies
           command: yarn install
-      - run:
-          # NOTE: Added a command to avoid build failures
-          # Node Sass could not find a binding for your current environment: Linux 64-bit with Node.js 8.x
-          name: rebuild node-sass
-          command: yarn add node-sass --force
 
       # ビルド実行
       - run:
@@ -35,7 +30,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node:8.12.0
+      - image: circleci/node:10.0.0
     working_directory: ~/workspace
 
     steps:
