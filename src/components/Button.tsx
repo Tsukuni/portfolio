@@ -14,15 +14,15 @@ const Button = ({ children, onClick }: Props) => (
 
 const Wrapper = styled.div`
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  bottom: 0px;
+  right: 0px;
 `;
 
 const Label = styled.span`
   color:#1f622e;
   padding: 12px 24px;
   font-weight: 500;
-  border: solid 1px#1f622e;
+  border: solid 1px #1f622e;
   border-radius: 3px;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
