@@ -2,13 +2,41 @@ version: '3'
 services:
   portfolio:
     container_name: portfolio
-    restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile
-
+    build: .
+    command:
+      - sh
+      - -c
+      - "rm -f tmp/pids/server.pid;
+         bundle exec rails s -b 0.0.0.0"
     volumes:
-      - ./:/portfolio:cached
+      - .:/portfolio
     ports:
-      - 3000:3000
-    command: [sh, -c, yarn install && yarn build && yarn dev]
+      - "30000:3000"
+    depends_on:
+      - database
+
+  database:
+    container_name: postgres
+    image: postgres:10-alpine
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+    volumes:
+      - .:/portfolio_db
+    ports:
+      - "5432:5432"
+
+  portfolio_front:
+    container_name: portfolio_front
+    image: node:12.3.1-alpine
+    volumes:
+      - .:/portfolio_front
+    environment:
+      NODE_ENV: development
+    working_dir: /portfolio_front
+    command:
+      - sh
+      - -c
+      - "yarn install;yarn dev"
+    ports:
+      - "8080:8080"

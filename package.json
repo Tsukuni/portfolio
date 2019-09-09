@@ -15,7 +15,7 @@
     "styled-reset": "^3.0.2"
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --hot",
+    "dev": "webpack-dev-server --mode development --hot",
     "build": "NODE_ENV=production webpack",
     "eslint": "eslint -c ./.eslintrc.json 'src/**/*.{ts,tsx}'",
     "fix": "eslint './src/**/*' --fix"

@@ -4,10 +4,10 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   mode: isDev ? 'development' : 'production',
-  entry: './src/index.tsx',
+  entry: path.resolve(__dirname, 'frontend','src'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, 'frontend', 'public')
   },
 
   devtool: isDev ? 'source-map' : '',
@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)(\?.+)?$/,
-        include: [path.resolve(__dirname, 'public', 'images')],
+        include: [path.resolve(__dirname, 'frontend', 'public', 'images')],
         use: {
           loader: 'url-loader',
           options: {
@@ -37,9 +37,14 @@ module.exports = {
     ]
   },
 
+  devServer: {
+    host: '0.0.0.0',
+    port: 8080
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './frontend/public/index.html'
     })
   ]
 };

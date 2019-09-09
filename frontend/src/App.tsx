@@ -13,6 +13,7 @@ const App = () => (
 const Wrapper = styled.div`
   font-family: 'Noto Sans JP', sans-serif;
   font-family: 'Lexend Exa', sans-serif;
+  overflow: hidden;
 `;
 
 export default App;
