@@ -4,7 +4,7 @@
     "noUnusedLocals" : true,
     "noImplicitThis": true,
     "alwaysStrict": true,
-    "outDir": "./public/",
+    "outDir": "./frontend/public/",
     "sourceMap": true,
     "noImplicitAny": true,
     "lib": ["dom", "es2015", "es2017"],
@@ -15,6 +15,6 @@
     "typeRoots": ["types", "node_modules/@types"],
   },
   "include": [
-    "./src/**/*"
+    "./frontend/src/**/*"
   ]
 }
