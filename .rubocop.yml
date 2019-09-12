@@ -11,7 +11,7 @@ AllCops:
     - config/**/*
     - Gemfile
     - frontend/**/*
-    - test/**/*
+    - spec/**/*
 
 # Missing magic comment # frozen_string_literal: true. を無視
 Style/FrozenStringLiteralComment:
