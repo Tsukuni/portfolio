@@ -17,17 +17,19 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: portfolio
   password: password
   username: user
   host:     postgres
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
+  database: portfolio_development
   <<: *default
 
 test:
+  database: portfolio_test
   <<: *default
 
 production:
+  database: portfolio_production
   <<: *default
