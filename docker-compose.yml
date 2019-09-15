@@ -22,7 +22,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: user
     volumes:
-      - .:/portfolio_db
+      - ./pgsql-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
