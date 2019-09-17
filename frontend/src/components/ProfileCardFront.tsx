@@ -38,11 +38,17 @@ const ProfileCardFront = ({ onRoll }: Props) => (
       </SubInfo>
     </Left>
     <Right>
-      <>
-        <Small>ENGINEER</Small>
-        <Name>津國健太</Name>
-        <Small>Kenta Tsukuni</Small>
-      </>
+      <NameContainer>
+        <NameBox>
+          <Small>ENGINEER</Small>
+          <Name>津國健太</Name>
+          <Small>Kenta Tsukuni</Small>
+        </NameBox>
+        <AccessCounterBox>
+          <Small>本日1人</Small>
+          <Small>合計2人</Small>
+        </AccessCounterBox>
+      </NameContainer>
       <ProfileBox>
         ハリネズミ系エンジニアです。<br />
         一緒に魚釣り・スプラトゥーンできる人探してます。
@@ -51,6 +57,21 @@ const ProfileCardFront = ({ onRoll }: Props) => (
     </Right>
   </>
 );
+
+const NameContainer =styled.div`
+  display: flex;
+`
+
+const NameBox = styled.div`
+  width: 50%;
+  margin-right: 32px;
+`
+
+const AccessCounterBox = styled.div`
+  padding-top: 8px;
+  width: 50%;
+  text-align: right;
+`
 
 const Left = styled.div`
   position: relative;
