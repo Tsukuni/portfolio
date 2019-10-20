@@ -22,6 +22,6 @@ class Api::V1::AccessLogsController < ApplicationController
   private
 
   def set_access_log
-    @access_log = AccessLog.find_by(created_at: Time.zone.today.all_day)
+    @access_log = AccessLog.find_or_create_by(created_at: Time.zone.today.all_day)
   end
 end
