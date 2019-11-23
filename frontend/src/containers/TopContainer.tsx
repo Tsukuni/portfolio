@@ -2,11 +2,18 @@ import * as React from 'react';
 import styled from 'styled-components';
 import ProfileCard from '../components/ProfileCard';
 
-const TopContainer: React.SFC = () => (
-  <Top>
-    <ProfileCard />
-  </Top>
-)
+const TopContainer: React.FC<{}> = () => {
+  const [visitorCount, setVisitorCount] = React.useState({
+    totalAmount: 0,
+    amount: 0
+  });
+
+  return (
+    <Top>
+      <ProfileCard visitorCount={visitorCount} />
+    </Top>
+  )
+}
 
 const Top = styled.div`
   width: 100vw;

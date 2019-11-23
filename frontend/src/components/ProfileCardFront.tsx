@@ -14,11 +14,16 @@ import Button from './Button';
 const icon = require('../../public/images/icon.jpg');
 const icon2 = require('../../public/images/icon2.jpg');
 
-interface Props {
-  onRoll: () => void;
+export type HistoryType = {
+  totalAmount: Number,
+  amount: Number
 }
 
-const ProfileCardFront = ({ onRoll }: Props) => (
+type Props = HistoryType & {
+  onRoll: () => void
+}
+
+export const ProfileCardFront: React.FC<Props> = ({ totalAmount, amount, onRoll }) => (
   <>
     <Left>
       <IconBox>
@@ -45,8 +50,8 @@ const ProfileCardFront = ({ onRoll }: Props) => (
           <Small>Kenta Tsukuni</Small>
         </NameBox>
         <AccessCounterBox>
-          <Small>本日1人</Small>
-          <Small>合計2人</Small>
+          <Small>{`本日${amount}人目`}</Small>
+          <Small>{`通算${totalAmount}人目`}</Small>
         </AccessCounterBox>
       </NameContainer>
       <ProfileBox>
@@ -134,5 +139,3 @@ const Name = styled.h1`
   font-size: 2.4em;
   margin: 8px 0;
 `;
-
-export default ProfileCardFront;

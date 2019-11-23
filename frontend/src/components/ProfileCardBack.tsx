@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import media from "styled-media-query";
 import Button from './Button';
 
-interface Props {
+type Props = {
   onRoll: () => void;
-}
+};
 
-const ProfileCardBack = ({ onRoll }: Props) => (
+const ProfileCardBack: React.FC<Props> = ({ onRoll }) => (
   <>
     <DetailBox>
       <Detail>
