@@ -1,9 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { HistoryType } from '../components/ProfileCardFront';
 import ProfileCard from '../components/ProfileCard';
 
 const TopContainer: React.FC<{}> = () => {
-  const [visitorCount, setVisitorCount] = React.useState({
+  const [visitorCount, setVisitorCount] = React.useState<HistoryType>({
     totalAmount: 0,
     amount: 0
   });
