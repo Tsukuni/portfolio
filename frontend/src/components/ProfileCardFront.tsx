@@ -14,11 +14,16 @@ import Button from './Button';
 const icon = require('../../public/images/icon.jpg');
 const icon2 = require('../../public/images/icon2.jpg');
 
-interface Props {
-  onRoll: () => void;
+export type HistoryType = {
+  totalAmount: Number,
+  amount: Number
 }
 
-const ProfileCardFront = ({ onRoll }: Props) => (
+type Props = HistoryType & {
+  onRoll: () => void
+}
+
+export const ProfileCardFront: React.FC<Props> = ({ totalAmount, amount, onRoll }) => (
   <>
     <Left>
       <IconBox>
@@ -38,11 +43,17 @@ const ProfileCardFront = ({ onRoll }: Props) => (
       </SubInfo>
     </Left>
     <Right>
-      <>
-        <Small>ENGINEER</Small>
-        <Name>津國健太</Name>
-        <Small>Kenta Tsukuni</Small>
-      </>
+      <NameContainer>
+        <NameBox>
+          <Small>ENGINEER</Small>
+          <Name>津國健太</Name>
+          <Small>Kenta Tsukuni</Small>
+        </NameBox>
+        <AccessCounterBox>
+          <Small>{`本日${amount}人目`}</Small>
+          <Small>{`通算${totalAmount}人目`}</Small>
+        </AccessCounterBox>
+      </NameContainer>
       <ProfileBox>
         ハリネズミ系エンジニアです。<br />
         一緒に魚釣り・スプラトゥーンできる人探してます。
@@ -51,6 +62,21 @@ const ProfileCardFront = ({ onRoll }: Props) => (
     </Right>
   </>
 );
+
+const NameContainer =styled.div`
+  display: flex;
+`
+
+const NameBox = styled.div`
+  width: 50%;
+  margin-right: 32px;
+`
+
+const AccessCounterBox = styled.div`
+  padding-top: 8px;
+  width: 50%;
+  text-align: right;
+`
 
 const Left = styled.div`
   position: relative;
@@ -113,5 +139,3 @@ const Name = styled.h1`
   font-size: 2.4em;
   margin: 8px 0;
 `;
-
-export default ProfileCardFront;
