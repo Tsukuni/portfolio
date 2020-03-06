@@ -12,7 +12,7 @@ const SnsIconList = styled.div`
     color: black;
     text-decoration: none;
     &:visited {
-      color:black;
+      color: black;
     }
   }
 `;

@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `;
 
 const Label = styled.span`
-  color:#1f622e;
+  color: #1f622e;
   padding: 12px 24px;
   font-weight: 500;
   border: solid 1px #1f622e;
@@ -28,7 +28,7 @@ const Label = styled.span`
   cursor: pointer;
   &:hover {
     color: white;
-    background-color:#1f622e;
+    background-color: #1f622e;
   }
 `;
 

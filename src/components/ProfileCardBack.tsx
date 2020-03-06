@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import media from "styled-media-query";
+import media from 'styled-media-query';
 import Button from './Button';
 
 interface Props {
@@ -17,13 +17,13 @@ const ProfileCardBack = ({ onRoll }: Props) => (
       </Detail>
       <Detail>
         <Title>スキル</Title>
-        <p>HTML, CSS, Javascript, React, TypeScript, Ruby, RubyonRails</p>
+        <p>React, TypeScript, Ruby, RubyonRails, Laravel</p>
       </Detail>
     </DetailBox>
     <DetailBox>
       <Detail>
         <Title>趣味</Title>
-        <p>魚釣り, ゲーム, ドラム, 美脚</p>
+        <p>魚釣り, ゲーム, ドラム, ポーカー</p>
       </Detail>
       <Detail>
         <Title>特技</Title>
@@ -35,10 +35,10 @@ const ProfileCardBack = ({ onRoll }: Props) => (
 );
 
 const DetailBox = styled.div`
-  position:relative;
+  position: relative;
   width: 50%;
   height: 100%;
-  ${media.lessThan("medium")`
+  ${media.lessThan('medium')`
     width: 100%;
     height: 50%;
   `}
@@ -47,7 +47,7 @@ const DetailBox = styled.div`
 const Detail = styled.div`
   width: 100%;
   height: 35%;
-  ${media.lessThan("medium")`
+  ${media.lessThan('medium')`
     width: 100%;
     height: 50%;
   `}

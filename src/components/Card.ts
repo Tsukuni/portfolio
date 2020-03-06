@@ -9,17 +9,17 @@ const Card = styled.div`
   height: 420px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
   border-radius: 3px;
-  background-color:rgb(251, 242, 229);
+  background-color: rgb(251, 242, 229);
   padding: 28px;
   box-sizing: border-box;
 
-  ${media.lessThan("medium")`
+  ${media.lessThan('medium')`
     width: 400px;
     height: 600px;
     flex-wrap: wrap;
   `}
 
-  ${media.lessThan("small")`
+  ${media.lessThan('small')`
     width: 320px;
     height: 500px;
     flex-wrap: wrap;

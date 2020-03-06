@@ -15,7 +15,7 @@ const SwitchIcon = ({ mainIcon, subIcon }: Props) => {
       onMouseEnter={() => setIsHover(!isHover)}
       onMouseLeave={() => setIsHover(!isHover)}
     />
-  )
+  );
 };
 
 const Image = styled.img`
