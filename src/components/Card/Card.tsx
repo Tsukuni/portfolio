@@ -1,17 +1,29 @@
+import * as React from 'react';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
-const Card = styled.div`
-  display: flex;
-  position: relative;
-  line-height: 1.6em;
-  width: 800px;
+interface Props {
+  children: React.ReactNode;
+}
+
+const Card: React.FC<Props> = ({ children }) => (
+  <Container>{children}</Container>
+);
+
+const Container = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+
+  width: 780px;
   height: 420px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
   border-radius: 3px;
+  box-sizing: border-box;
   background-color: rgb(251, 242, 229);
   padding: 28px;
-  box-sizing: border-box;
 
   ${media.lessThan('medium')`
     width: 400px;

@@ -1,6 +1,15 @@
+import * as React from 'react';
 import styled from 'styled-components';
 
-const SnsIconList = styled.div`
+interface Props {
+  children: React.ReactNode;
+}
+
+const IconList: React.FC<Props> = ({ children }) => (
+  <Container>{children}</Container>
+);
+
+const Container = styled.div`
   margin-top: 10px;
   width: 100%;
   display: flex;
@@ -17,4 +26,4 @@ const SnsIconList = styled.div`
   }
 `;
 
-export default SnsIconList;
+export default IconList;

@@ -24,14 +24,10 @@ module.exports = {
         use: [{ loader: 'ts-loader' }]
       },
       {
-        test: /\.(jpe?g|png|gif|svg|ico)(\?.+)?$/,
+        test: /\.(jpe?g|png|gif|svg|ico|jpg)(\?.+)?$/,
         include: [path.resolve(__dirname, 'public', 'images')],
         use: {
           loader: 'url-loader',
-          options: {
-            limit: 8192,
-            name: './img/[name].[ext]'
-          }
         }
       }
     ]

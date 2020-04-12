@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import Button from './Button';
 
 interface Props {
   onRoll: () => void;
@@ -12,8 +11,10 @@ const ProfileCardBack = ({ onRoll }: Props) => (
     <DetailBox>
       <Detail>
         <Title>職歴</Title>
-        <p>ピクスタ株式会社(アルバイト) 2018.5~</p>
-        <p>株式会社カウンターワークス 2019.4~</p>
+        <p>ピクスタ株式会社(アルバイト)</p>
+        <p>2018.5~2019.12</p>
+        <p>株式会社カウンターワークス</p>
+        <p>2019.4~</p>
       </Detail>
       <Detail>
         <Title>スキル</Title>
@@ -29,7 +30,6 @@ const ProfileCardBack = ({ onRoll }: Props) => (
         <Title>特技</Title>
         <p>空手(初段), 囲碁(初段), ピアノ</p>
       </Detail>
-      <Button onClick={onRoll}>おもてに戻る</Button>
     </DetailBox>
   </>
 );
