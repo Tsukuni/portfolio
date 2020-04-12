@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import Button from './Button';
 
 interface Props {
   onRoll: () => void;
@@ -29,7 +28,6 @@ const ProfileCardBack = ({ onRoll }: Props) => (
         <Title>特技</Title>
         <p>空手(初段), 囲碁(初段), ピアノ</p>
       </Detail>
-      <Button onClick={onRoll}>おもてに戻る</Button>
     </DetailBox>
   </>
 );
