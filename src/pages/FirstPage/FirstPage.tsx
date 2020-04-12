@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Container from '../Container';
-import ProfileCard from '../ProfileCard';
+import Container from '../../components/Container';
+import ProfileCard from '../../components/ProfileCard';
 
 const FirstPage: React.FC<{}> = () => (
   <Container>

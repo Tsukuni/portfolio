@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Reset } from 'styled-reset';
-import FirstPage from './components/FirstPage';
+import FirstPage from './pages/FirstPage';
 import Header from './components/Header';
 
 const App: React.FC<{}> = () => (
