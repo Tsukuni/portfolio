@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Reset } from 'styled-reset';
 import FirstPage from './pages/FirstPage';
+import SecondPage from './pages/SecondPage';
 import Header from './components/Header';
 
 const App: React.FC<{}> = () => (
@@ -9,6 +10,7 @@ const App: React.FC<{}> = () => (
     <Reset />
     <Header />
     <FirstPage />
+    <SecondPage />
   </Container>
 );
 

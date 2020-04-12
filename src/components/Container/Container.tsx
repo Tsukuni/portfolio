@@ -13,6 +13,7 @@ const StyledContainer = styled.div`
   width: 100vw;
   height: 100vh;
   padding: auto;
+  position: relative;
 `;
 
 export default Container;
