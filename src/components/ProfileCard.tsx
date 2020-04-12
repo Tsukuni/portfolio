@@ -8,15 +8,13 @@ const ProfileCard = () => {
   const [isRoll, setIsRoll] = React.useState(false);
 
   return (
-    <Wrapper>
-      <Card>
-        {isRoll ? (
-          <ProfileCardBack onRoll={() => setIsRoll(!isRoll)} />
-        ) : (
-          <ProfileCardFront onRoll={() => setIsRoll(!isRoll)} />
-        )}
-      </Card>
-    </Wrapper>
+    <Card>
+      {isRoll ? (
+        <ProfileCardBack onRoll={() => setIsRoll(!isRoll)} />
+      ) : (
+        <ProfileCardFront onRoll={() => setIsRoll(!isRoll)} />
+      )}
+    </Card>
   );
 };
 
