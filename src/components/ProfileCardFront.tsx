@@ -2,14 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 import SwitchIcon from './SwitchIcon';
-import SnsIconList from './SnsIconList';
-import {
-  faGithub,
-  faTwitter,
-  faFacebook,
-  faInstagram
-} from '@fortawesome/free-brands-svg-icons';
-import SnsIcon from './SnsIcon';
 import Button from './Button';
 import icon from '../../public/images/icon.jpg';
 import icon2 from '../../public/images/icon2.jpg';
@@ -23,20 +15,6 @@ const ProfileCardFront = ({ onRoll }: Props) => (
     <Left>
       <IconBox>
         <SwitchIcon mainIcon={icon} subIcon={icon2} />
-        <SnsIconList>
-          <>
-            <SnsIcon link="https://twitter.com/tteooiyry" icon={faTwitter} />
-            <SnsIcon
-              link="https://www.facebook.com/tteooi.ryry"
-              icon={faFacebook}
-            />
-            <SnsIcon
-              link="https://www.instagram.com/tteooiyry/?hl=ja"
-              icon={faInstagram}
-            />
-            <SnsIcon link="https://github.com/Tsukuni" icon={faGithub} />
-          </>
-        </SnsIconList>
       </IconBox>
       <SubInfo>
         <Small>tamkchi.fugu@gmail.com</Small>
