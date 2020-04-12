@@ -11,8 +11,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import SnsIcon from './SnsIcon';
 import Button from './Button';
-const icon = require('../../public/images/icon.jpg');
-const icon2 = require('../../public/images/icon2.jpg');
+import icon from '../../public/images/icon.jpg';
+import icon2 from '../../public/images/icon2.jpg';
 
 interface Props {
   onRoll: () => void;
