@@ -3,16 +3,20 @@ import Container from '../../components/Container';
 import Card from '../../components/Card';
 import ProfileImage from './components/ProfileImage';
 import SnsIconList from './components/SnsIconList';
+import ScrollButton from '../../components/ScrollButton';
 import styled from 'styled-components';
 
-const FirstPage: React.FC<{}> = () => (
+interface Props {
+  onChange: (number: number) => void;
+}
+
+const FirstPage: React.FC<Props> = ({ onChange }) => (
   <Container>
     <Card>
       <Wrapper>
         <Left>
           <ProfileImage />
           <SnsIconList />
-
           <InfoWrapper>
             <p>tamkchi.fugu@gmail.com</p>
             <p>COUNTERWORKS Inc.</p>
@@ -29,6 +33,7 @@ const FirstPage: React.FC<{}> = () => (
           </ProfileBox>
         </Right>
       </Wrapper>
+      <ScrollButton onClickDown={() => onChange(1)} />
     </Card>
   </Container>
 );

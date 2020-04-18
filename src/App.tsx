@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { useEffect } from 'react';
+import { useState, useCallback } from 'react';
+import ReactPageScroller from 'react-page-scroller';
 import styled from 'styled-components';
 import { Reset } from 'styled-reset';
 import FirstPage from './pages/FirstPage';
@@ -7,12 +8,21 @@ import SecondPage from './pages/SecondPage';
 import Header from './components/Header';
 
 const App: React.FC<{}> = () => {
+  const [page, setPage] = useState<number>(0);
+
+  const handleChange = useCallback((number: number) => {
+    setPage(number);
+  }, []);
   return (
     <Container>
       <Reset />
       <Header />
-      <FirstPage />
-      <SecondPage />
+      <>
+        <ReactPageScroller pageOnChange={handleChange} customPageNumber={page}>
+          <FirstPage onChange={handleChange} />
+          <SecondPage onChange={handleChange} />
+        </ReactPageScroller>
+      </>
     </Container>
   );
 };
