@@ -1,10 +1,15 @@
 import * as React from 'react';
+import ScrollButton from '../../components/ScrollButton';
 import Container from '../../components/Container';
 import Card from '../../components/Card';
 import media from 'styled-media-query';
 import styled from 'styled-components';
 
-const SecondPage: React.FC<{}> = () => (
+interface Props {
+  onChange: (number: number) => void;
+}
+
+const SecondPage: React.FC<Props> = ({ onChange }) => (
   <Container>
     <Card>
       <Wrapper>
@@ -32,6 +37,7 @@ const SecondPage: React.FC<{}> = () => (
           </Detail>
         </Right>
       </Wrapper>
+      <ScrollButton onClickUp={() => onChange(0)} />
     </Card>
   </Container>
 );
