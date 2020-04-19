@@ -18,7 +18,7 @@ const Container = styled.div<{ isMobile: boolean }>`
   -webkit-transform: translateY(-50%) translateX(-50%);
 
   width: ${({ isMobile }) => (isMobile ? '320px' : '780px')};
-  height: ${({ isMobile }) => (isMobile ? '500px' : '420px')};
+  height: ${({ isMobile }) => (isMobile ? '450px' : '420px')};
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
   border-radius: 3px;
   box-sizing: border-box;
