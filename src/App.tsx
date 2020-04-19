@@ -17,7 +17,7 @@ const App: React.FC<{}> = () => {
     setPage(number);
   }, []);
 
-  const mobile = useMemo(() => isMobile(window.navigator).any, []);
+  const mobile = useMemo(() => isMobile(window.navigator).phone, []);
 
   return (
     <Container>
