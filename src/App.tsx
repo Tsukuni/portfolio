@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import ReactPageScroller from 'react-page-scroller';
 import styled from 'styled-components';
 import { Reset } from 'styled-reset';
 import FirstPage from './pages/FirstPage';
 import SecondPage from './pages/SecondPage';
 import Header from './components/Header';
+import isMobile from 'ismobilejs';
 
 const App: React.FC<{}> = () => {
   const [page, setPage] = useState<number>(0);
@@ -13,6 +14,9 @@ const App: React.FC<{}> = () => {
   const handleChange = useCallback((number: number) => {
     setPage(number);
   }, []);
+
+  const mobile = useMemo(() => isMobile(window.navigator).any, []);
+
   return (
     <Container>
       <Reset />

@@ -189,6 +189,13 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/ismobilejs@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/ismobilejs/-/ismobilejs-1.0.1.tgz#817a0a7fc2faad9494ac5f8b44d75d536c876ef6"
+  integrity sha512-QLMcgU2IHqwjWXIS8CSJSZDUu75qhq29K/xBIIcJbPZ9nqIrdAkFJ472zH/OkaiX/6L31chBBkU/pNoY+hY3og==
+  dependencies:
+    ismobilejs "*"
+
 "@types/json-schema@^7.0.3":
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
@@ -3050,6 +3057,11 @@ isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
+
+ismobilejs@*, ismobilejs@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/ismobilejs/-/ismobilejs-1.1.1.tgz#c56ca0ae8e52b24ca0f22ba5ef3215a2ddbbaa0e"
+  integrity sha512-VaFW53yt8QO61k2WJui0dHf4SlL8lxBofUuUmwBo0ljPk0Drz2TiuDW4jo3wDcv41qy/SxrJ+VAzJ/qYqsmzRw==
 
 isobject@^2.0.0:
   version "2.1.0"
