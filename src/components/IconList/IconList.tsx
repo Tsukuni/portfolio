@@ -11,7 +11,6 @@ const IconList: React.FC<Props> = ({ children }) => (
 
 const Container = styled.div`
   margin-top: 10px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   svg {

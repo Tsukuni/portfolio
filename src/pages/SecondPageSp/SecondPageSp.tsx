@@ -8,9 +8,9 @@ interface Props {
   onChange: (number: number) => void;
 }
 
-const SecondPage: React.FC<Props> = ({ onChange }) => (
+const SecondPageSp: React.FC<Props> = ({ onChange }) => (
   <Container>
-    <Card>
+    <Card isMobile={true}>
       <Wrapper>
         <Left>
           <Detail>
@@ -58,13 +58,14 @@ const Right = styled.div`
 
 const Detail = styled.div`
   width: 100%;
-  height: 35%;
+  height: 50%;
+  font-size: 12px;
 `;
 
 const Title = styled.h3`
   margin: 12px 0;
-  font-size: 1.4em;
+  font-size: 20px;
   font-weight: bold;
 `;
 
-export default SecondPage;
+export default SecondPageSp;

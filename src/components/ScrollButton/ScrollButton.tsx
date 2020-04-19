@@ -4,19 +4,24 @@ import styled from 'styled-components';
 interface Props {
   onClickUp?: () => void;
   onClickDown?: () => void;
+  isMobile?: boolean;
 }
 
-const ScrollButton: React.FC<Props> = ({ onClickUp, onClickDown }) => (
-  <Container>
+const ScrollButton: React.FC<Props> = ({
+  onClickUp,
+  onClickDown,
+  isMobile = false
+}) => (
+  <Container isMobile={isMobile}>
     <UpTriangle onClick={onClickUp} disable={onClickUp ? false : true} />
     <DownTriangle onClick={onClickDown} disable={onClickDown ? false : true} />
   </Container>
 );
 
-const Container = styled.div`
+const Container = styled.div<{ isMobile: boolean }>`
   position: absolute;
-  bottom: 40px;
-  right: 50px;
+  bottom: ${({ isMobile }) => (isMobile ? '28px' : '40px')};
+  right: ${({ isMobile }) => (isMobile ? '32px' : '50px')};
 `;
 
 const UpTriangle = styled.div<{ disable: boolean }>`
