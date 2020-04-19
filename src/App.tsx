@@ -4,7 +4,9 @@ import ReactPageScroller from 'react-page-scroller';
 import styled from 'styled-components';
 import { Reset } from 'styled-reset';
 import FirstPage from './pages/FirstPage';
+import FirstPageSp from './pages/FirstPageSp';
 import SecondPage from './pages/SecondPage';
+import SecondPageSp from './pages/SecondPageSp';
 import Header from './components/Header';
 import isMobile from 'ismobilejs';
 
@@ -20,12 +22,25 @@ const App: React.FC<{}> = () => {
   return (
     <Container>
       <Reset />
-      <Header />
+      <Header isMobile={mobile} />
       <>
-        <ReactPageScroller pageOnChange={handleChange} customPageNumber={page}>
-          <FirstPage onChange={handleChange} />
-          <SecondPage onChange={handleChange} />
-        </ReactPageScroller>
+        {mobile ? (
+          <ReactPageScroller
+            pageOnChange={handleChange}
+            customPageNumber={page}
+          >
+            <FirstPageSp onChange={handleChange} />
+            <SecondPageSp onChange={handleChange} />
+          </ReactPageScroller>
+        ) : (
+          <ReactPageScroller
+            pageOnChange={handleChange}
+            customPageNumber={page}
+          >
+            <FirstPage onChange={handleChange} />
+            <SecondPage onChange={handleChange} />
+          </ReactPageScroller>
+        )}
       </>
     </Container>
   );
