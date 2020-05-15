@@ -1,5 +1,5 @@
 import * as React from 'react';
-import icon from '../../../../../public/images/icon.jpg';
+import icon from 'images/icon.png';
 import styled from 'styled-components';
 
 const ProfileImage: React.FC<{}> = () => (
@@ -14,7 +14,6 @@ const Container = styled.div`
 
 const Image = styled.img`
   width: 150px;
-  border-radius: 50%;
   padding: 4px;
   box-sizing: border-box;
   margin: auto;

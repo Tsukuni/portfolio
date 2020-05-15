@@ -1,5 +1,5 @@
 import * as React from 'react';
-import AnchorIcon from '../../../../components/AnchorIcon';
+import AnchorIcon from 'common/AnchorIcon';
 import {
   faGithub,
   faTwitter,

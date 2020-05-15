@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Container from '../../components/Container';
-import Card from '../../components/Card';
+import Container from 'common/Container';
+import Card from 'common/Card';
 import ProfileImage from './components/ProfileImage';
 import SnsIconList from './components/SnsIconList';
-import ScrollButton from '../../components/ScrollButton';
+import ScrollButton from 'common/ScrollButton';
 import styled from 'styled-components';
 
 interface Props {

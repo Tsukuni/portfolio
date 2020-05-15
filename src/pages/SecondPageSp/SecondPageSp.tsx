@@ -1,7 +1,7 @@
 import * as React from 'react';
-import ScrollButton from '../../components/ScrollButton';
-import Container from '../../components/Container';
-import Card from '../../components/Card';
+import ScrollButton from 'common/ScrollButton';
+import Container from 'common/Container';
+import Card from 'common/Card';
 import styled from 'styled-components';
 
 interface Props {

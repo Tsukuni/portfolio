@@ -3,11 +3,11 @@ import { useState, useCallback, useMemo } from 'react';
 import ReactPageScroller from 'react-page-scroller';
 import styled from 'styled-components';
 import { Reset } from 'styled-reset';
-import FirstPage from './pages/FirstPage';
-import FirstPageSp from './pages/FirstPageSp';
-import SecondPage from './pages/SecondPage';
-import SecondPageSp from './pages/SecondPageSp';
-import Header from './components/Header';
+import FirstPage from 'pages/FirstPage';
+import FirstPageSp from 'pages/FirstPageSp';
+import SecondPage from 'pages/SecondPage';
+import SecondPageSp from 'pages/SecondPageSp';
+import Header from 'common/Header';
 import isMobile from 'ismobilejs';
 
 const App: React.FC<{}> = () => {

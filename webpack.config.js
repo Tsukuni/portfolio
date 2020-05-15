@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
@@ -26,13 +27,17 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg|ico|jpg)(\?.+)?$/,
         include: [path.resolve(__dirname, 'public', 'images')],
-        use: {
-          loader: 'url-loader',
-        }
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
       }
     ]
   },
-
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+    plugins: [new TsconfigPathsPlugin({ configFile: 'tsconfig.json' })],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html'
