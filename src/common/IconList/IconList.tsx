@@ -12,12 +12,14 @@ const IconList: React.FC<Props> = ({ children }) => (
 const Container = styled.div`
   margin-top: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   svg {
     font-size: 21px;
   }
   a {
     color: black;
+    display: inline-block;
+    width: 50px;
     text-decoration: none;
     &:visited {
       color: black;

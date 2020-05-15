@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Container from '../../components/Container';
-import Card from '../../components/Card';
+import Container from 'common/Container';
+import Card from 'common/Card';
 import ProfileImage from './components/ProfileImage';
 import SnsIconList from './components/SnsIconList';
-import ScrollButton from '../../components/ScrollButton';
+import ScrollButton from 'common/ScrollButton';
 import styled from 'styled-components';
 
 interface Props {
@@ -18,18 +18,16 @@ const FirstPage: React.FC<Props> = ({ onChange }) => (
           <ProfileImage />
           <SnsIconList />
           <InfoWrapper>
-            <p>tamkchi.fugu@gmail.com</p>
-            <p>COUNTERWORKS Inc.</p>
+            <p>tsukunin@gmail.com</p>
+            <p>tsukunin.com</p>
           </InfoWrapper>
         </Left>
         <Right>
-          <Small>ENGINEER</Small>
-          <Name>津國健太</Name>
-          <Small>Kenta Tsukuni</Small>
+          <Small>画伯</Small>
+          <Name>つくにん</Name>
           <ProfileBox>
-            イラストレーター・画家
+            個性的で味のある絵を得意としてます。
             <br />
-            世界を旅しています
           </ProfileBox>
         </Right>
       </Wrapper>
@@ -51,7 +49,8 @@ const InfoWrapper = styled.div`
 `;
 
 const Small = styled.p`
-  font-size: 1em;
+  font-weight: bold;
+  font-size: 18px;
 `;
 
 const Name = styled.h1`

@@ -8,7 +8,7 @@ interface Props {
 }
 
 const AnchorIcon: React.FC<Props> = ({ link, icon }) => (
-  <a href={link}>
+  <a href={link} target="_blank" rel="noopener noreferrer">
     <FontAwesomeIcon icon={icon} />
   </a>
 );
