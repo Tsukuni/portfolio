@@ -16,19 +16,17 @@ const FirstPageSp: React.FC<Props> = ({ onChange }) => (
       <ProfileImage />
       <SnsIconList />
       <Wrapper>
-        <Small>ENGINEER</Small>
-        <Name>津國健太</Name>
-        <Small>Kenta Tsukuni</Small>
+        <Small>画伯</Small>
+        <Name>つくにん</Name>
       </Wrapper>
 
       <ProfileBox>
-        イラストレーター・画家
+        個性的で味のある絵を得意としてます。
         <br />
-        世界を旅しています
       </ProfileBox>
       <InfoWrapper>
-        <p>tamkchi.fugu@gmail.com</p>
-        <p>COUNTERWORKS Inc.</p>
+        <p>tsukunin@gmail.com</p>
+        <p>tsukunin.com</p>
       </InfoWrapper>
       <ScrollButton onClickDown={() => onChange(1)} isMobile={true} />
     </Card>
@@ -43,6 +41,7 @@ const InfoWrapper = styled.div`
 
 const Small = styled.p`
   font-size: 15px;
+  font-weight: bold;
 `;
 
 const Name = styled.h1`

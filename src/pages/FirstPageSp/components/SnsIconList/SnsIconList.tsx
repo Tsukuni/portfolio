@@ -1,22 +1,15 @@
 import * as React from 'react';
 import AnchorIcon from 'common/AnchorIcon';
-import {
-  faGithub,
-  faTwitter,
-  faFacebook,
-  faInstagram
-} from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
 
 const SnsIconList: React.FC<{}> = () => (
   <Container>
-    <AnchorIcon link="https://twitter.com/tteooiyry" icon={faTwitter} />
-    <AnchorIcon link="https://www.facebook.com/tteooi.ryry" icon={faFacebook} />
+    <AnchorIcon link="https://twitter.com/tsukunin" icon={faTwitter} />
     <AnchorIcon
-      link="https://www.instagram.com/tteooiyry/?hl=ja"
+      link="https://www.instagram.com/_tsukunin/?hl=ja"
       icon={faInstagram}
     />
-    <AnchorIcon link="https://github.com/Tsukuni" icon={faGithub} />
   </Container>
 );
 
