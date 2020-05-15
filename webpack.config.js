@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -8,7 +7,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, 'public/')
   },
 
   devtool: isDev ? 'source-map' : '',
@@ -26,10 +25,9 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico|jpg)(\?.+)?$/,
-        include: [path.resolve(__dirname, 'public', 'images')],
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]',
+          name: 'images/[name].[ext]',
         },
       }
     ]
@@ -38,9 +36,9 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     plugins: [new TsconfigPathsPlugin({ configFile: 'tsconfig.json' })],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html'
-    })
-  ]
+  devServer: {
+    host: '0.0.0.0',
+    port: 8080,
+    historyApiFallback: true
+  }
 };
