@@ -9,7 +9,7 @@ import styled from 'styled-components';
 export const TopPage = () => (
   <>
     <MainBoard>
-      <BoardTitle>ようこそ!!!!!!!</BoardTitle>
+      <BoardTitle>ようこそ!!!!!</BoardTitle>
       <IconImage
         icon={Icon}
         size={240}
@@ -44,6 +44,9 @@ const DetailBox = styled.div`
   text-align: center;
   font-size: 24px;
   color: #fff;
+  @media screen and (max-width: 767px) {
+    font-size: 18px;
+  }
 `;
 
 const Image = styled.img`

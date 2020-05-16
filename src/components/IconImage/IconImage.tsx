@@ -47,6 +47,10 @@ const Image = styled.img<{ size: number; position: Position; locate: number }>`
       ${position.left !== undefined && `left: ${position.left}px`};
       ${position.right !== undefined && `right: ${position.right}px`};
       ${position.bottom !== undefined && `bottom: ${position.bottom}px`};
+      @media screen and (max-width: 767px) {
+        width: ${size / 2}px;
+        height: ${size / 2}px;
+      }
     `;
   }}
 `;

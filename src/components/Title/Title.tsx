@@ -14,4 +14,7 @@ const Container = styled.h2`
   font-weight: bold;
   color: #fff;
   font-size: 32px;
+  @media screen and (max-width: 767px) {
+    font-size: 24px;
+  }
 `;

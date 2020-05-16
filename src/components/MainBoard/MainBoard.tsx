@@ -16,6 +16,9 @@ const Container = styled.div`
   height: 100vh;
   padding: 100px 50px;
   box-sizing: border-box;
+  @media screen and (max-width: 767px) {
+    padding: 100px 25px;
+  }
 `;
 
 const WhiteBoard = styled.div`

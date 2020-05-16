@@ -21,4 +21,7 @@ const Title = styled.h1`
   margin: auto;
   text-align: center;
   position: absolute;
+  @media screen and (max-width: 767px) {
+    font-size: 48px;
+  }
 `;
