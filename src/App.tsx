@@ -1,55 +1,20 @@
 import * as React from 'react';
-import { useState, useCallback, useMemo } from 'react';
-import ReactPageScroller from 'react-page-scroller';
+import { Switch, Route } from 'react-router-dom';
+import { Header } from 'components/Header';
+import { TopPage } from 'pages/TopPage';
 import styled from 'styled-components';
-import { Reset } from 'styled-reset';
-import FirstPage from 'pages/FirstPage';
-import FirstPageSp from 'pages/FirstPageSp';
-import SecondPage from 'pages/SecondPage';
-import SecondPageSp from 'pages/SecondPageSp';
-import Header from 'common/Header';
-import isMobile from 'ismobilejs';
 
-const App: React.FC<{}> = () => {
-  const [page, setPage] = useState<number>(0);
-
-  const handleChange = useCallback((number: number) => {
-    setPage(number);
-  }, []);
-
-  const mobile = useMemo(() => isMobile(window.navigator).phone, []);
-
-  return (
-    <Container>
-      <Reset />
-      <Header isMobile={mobile} />
-      <>
-        {mobile ? (
-          <ReactPageScroller
-            pageOnChange={handleChange}
-            customPageNumber={page}
-          >
-            <FirstPageSp onChange={handleChange} />
-            <SecondPageSp onChange={handleChange} />
-          </ReactPageScroller>
-        ) : (
-          <ReactPageScroller
-            pageOnChange={handleChange}
-            customPageNumber={page}
-          >
-            <FirstPage onChange={handleChange} />
-            <SecondPage onChange={handleChange} />
-          </ReactPageScroller>
-        )}
-      </>
-    </Container>
-  );
-};
+const App: React.FC<{}> = () => (
+  <Container>
+    <Header />
+    <Switch>
+      <Route exact path="/" component={TopPage} />
+    </Switch>
+  </Container>
+);
 
 const Container = styled.div`
-  font-family: 'Noto Sans JP', sans-serif;
-  font-family: 'Lexend Exa', sans-serif;
-  background-color: rgb(19, 59, 28);
+  min-height: 100vh;
 `;
 
 export default App;
