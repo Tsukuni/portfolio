@@ -17,10 +17,11 @@
     "declaration": false,
     "baseUrl": "./",
     "paths": {
-      "@": ["resources/src/*"],
-      "common/*": ["src/common/*"],
+      "@/*": ["src/*"],
+      "components/*": ["src/components/*"],
       "pages/*": ["src/pages/*"],
       "images/*": ["public/images/*"],
+      "themes/*": ["src/themes/*"],
     },
   },
   "include": [
