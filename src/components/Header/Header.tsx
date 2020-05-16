@@ -9,11 +9,14 @@ export const Header: React.FC<{}> = () => (
 );
 
 const Container = styled.div`
+  position: fixed;
   width: 100vw;
   height: 100px;
   padding: 8px;
   box-sizing: border-box;
   text-align: center;
+  background-color: #00695c;
+  z-index: 100;
 `;
 
 const Image = styled.img`

@@ -13,8 +13,8 @@ export const MainBoard: React.FC<Props> = ({ children }) => (
 
 const Container = styled.div`
   width: 100%;
-  height: calc(100vh - 100px);
-  padding: 0px 50px 100px;
+  height: 100vh;
+  padding: 100px 50px;
   box-sizing: border-box;
 `;
 

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Header } from 'components/Header';
+import { Footer } from 'components/Footer';
 import { TopPage } from 'pages/TopPage';
 import styled from 'styled-components';
 
@@ -10,6 +11,7 @@ const App: React.FC<{}> = () => (
     <Switch>
       <Route exact path="/" component={TopPage} />
     </Switch>
+    <Footer />
   </Container>
 );
 
