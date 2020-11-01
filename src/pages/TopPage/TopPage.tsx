@@ -40,7 +40,6 @@ export const TopPage = () => (
 );
 
 const DetailBox = styled.div`
-  width: 100vw;
   text-align: center;
   font-size: 24px;
   color: #fff;
