@@ -21,7 +21,7 @@ export const IconImage: React.FC<Props> = ({
   size,
   position,
   locate = 0,
-  className = ''
+  className = '',
 }) => (
   <Image
     src={icon}
