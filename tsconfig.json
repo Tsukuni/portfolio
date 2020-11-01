@@ -12,9 +12,8 @@
     "target": "es5",
     "jsx": "react",
     "moduleResolution": "node",
-    "typeRoots": ["src/types", "node_modules/@types"],
-    "allowJs": true,
-    "declaration": false,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["src/types"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],

@@ -36,8 +36,8 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     plugins: [new TsconfigPathsPlugin({ configFile: 'tsconfig.json' })],
   },
-  devServer: {
-    host: '0.0.0.0',
+  serve: {
+    host: 'localhost',
     port: 8080,
     historyApiFallback: true
   }
